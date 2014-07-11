@@ -1,0 +1,74 @@
+.graph_container {
+    height: 180px;
+    margin-bottom: 20px;
+
+    .graph_popup {
+        background: rgba(0,0,0,0.5);
+        color: white;
+        position: absolute;
+        padding: 10px;
+        border-radius: 10px;
+        top: 0;
+        left: 0;
+
+        .popup_date {
+            font-weight: bold;
+        }
+    }
+
+    .axis {
+        path, line {
+            fill: none;
+            stroke: #888;
+            shape-rendering: crispEdges;
+        }
+
+        text {
+            fill: #333;
+        }
+    }
+
+    .x_guides, .y_guides {
+        stroke: #ddd;
+        fill: none;
+        shape-rendering: crispEdges;
+    }
+
+    .graph {
+        path {
+            fill: rgba(255,128,128, 0.5);
+            stroke: rgba(255,128,128, 0.8);
+        }
+    }
+
+    .popup_trigger {
+        &:hover {
+            circle {
+                fill: lighten(rgb(255,108,108), 40%);
+                stroke-width: 3;
+            }
+        }
+
+        circle {
+            fill: white;
+            stroke: rgb(255,108,108);
+        }
+
+        .hitbox {
+            fill: black;
+            opacity: 0.0;
+        }
+    }
+
+    .label {
+        circle {
+            fill: white;
+            stroke: rgb(255,108,108);
+        }
+
+        text {
+            color: #444;
+        }
+    }
+}
+

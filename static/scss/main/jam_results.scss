@@ -1,0 +1,126 @@
+
+.jam_results {
+    padding: 0;
+
+
+    .ranking_footer, .ranking_header {
+        margin: 30px 40px;
+    }
+
+    .ranking_header, .ranking_footer {
+        text-align: right;
+    }
+
+    .pager {
+        color: #666;
+        .button {
+            margin-right: 5px;
+        }
+    }
+
+    .jam_summary {
+        border-bottom: 1px solid #dadada;
+        p {
+            margin: 20px 40px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    .game_rank {
+        padding: 30px 40px;
+        border-bottom: 1px solid #dadada;
+        @include clearfix;
+
+        &.first_place {
+            .game_cover img {
+                width: 315px;
+            }
+        }
+
+        &.second_place {
+            .game_cover img {
+                width: 300px;
+            }
+        }
+
+        &.third_place {
+            .game_cover img {
+                width: 275px;
+            }
+        }
+
+        a {
+            color: #444;
+        }
+
+
+        h2, h3, h4 {
+            margin: 0px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            a {
+                text-decoration: none;
+                color: $link_color;
+            }
+        }
+
+        h3, h4 {
+            font-weight: normal;
+            color: #666;
+
+            a {
+                color: #444;
+            }
+        }
+
+        .thumb_wrapper {
+            display: inline-block;
+            position: relative;
+        }
+
+        .game_thumb_glow {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            @include thumbnail_style;
+        }
+
+        .game_cover {
+            display: block;
+            float: left;
+            width: 315px;
+            text-align: right;
+
+            img {
+                display: block;
+                width: 250px;
+            }
+        }
+
+        .game_data {
+            margin-left: 340px;
+        }
+
+        .nice_table {
+            width: 100%;
+
+            td {
+                width: percentage(1/5);
+            }
+
+            .crit_name_col {
+                width: percentage(2/5);
+            }
+        }
+    }
+
+    .header_nav {
+        margin-bottom: 10px;
+    }
+
+}

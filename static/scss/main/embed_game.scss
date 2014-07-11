@@ -1,0 +1,63 @@
+
+.embed_game {
+    padding: 0;
+
+    .embed_container {
+        margin: 20px 0;
+    }
+
+    .embed_options {
+        margin: 10px 0;
+
+        .options_label {
+            margin-right: 10px;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        strong {
+            color: #444;
+        }
+
+        input[type="checkbox"] {
+            vertical-align: middle;
+        }
+    }
+
+    .embed_code {
+        margin: 10px 0;
+        width: 552px;
+        height: 60px;
+        @include border_box;
+    }
+
+    .embed_directions {
+        width: 552px;
+        font-size: 13px;
+        color: #666;
+
+        strong {
+            color: #444;
+        }
+    }
+
+    .padded {
+        h2 {
+            margin-top: 40px;
+        }
+
+        p {
+            margin-top: 0;
+            font-size: 16px;
+            width: 600px;
+            line-height: 1.5;
+        }
+    }
+
+    .warning_box {
+        padding-bottom: 0;
+    }
+}
+

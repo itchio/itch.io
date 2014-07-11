@@ -1,0 +1,203 @@
+@import "common";
+@import "lightboxes/add_game_to_collection";
+
+.press_links_lightbox {
+    width: 620px;
+
+    form {
+        margin: 30px 40px;
+
+        &.loader {
+            display: inline-block;
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        .loader {
+            display: none;
+        }
+    }
+}
+
+.press_games {
+    padding: 0;
+
+    p {
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 0 0 20px 0;
+    }
+
+    .information {
+        p {
+            max-width: 600px;
+        }
+    }
+
+    .press_game_list {
+        margin-top: 40px;
+    }
+
+    .press_game_list ~ .press_game_list {
+        margin-top: 0;
+    }
+
+    .game_cell {
+        border: 2px solid $border_color;
+        margin: 0 0 20px 0;
+        position: relative;
+
+        &.loading {
+            .view_downloads_btn {
+                display: none;
+            }
+
+            .loader {
+                display: inline-block;
+            }
+        }
+
+        &.has_downloads {
+            .view_downloads_btn{
+                display: none;
+            }
+        }
+
+        .loader {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .primary_data {
+            padding: 8px 0;
+            min-height: 83px; // thumb height
+            margin-left: 125px;
+            margin-right: 290px;
+        }
+
+        .downloader {
+            position: absolute;
+            text-align: right;
+
+            top: 0;
+            right: 150px;
+            padding: 10px;
+        }
+
+        .game_image {
+            position: absolute;
+            padding: 10px 0 0 10px;
+
+            top: 0;
+            left: 0;
+
+            img {
+                display: block;
+                width: 105px;
+            }
+        }
+
+        .secondary_data {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 150px;
+            text-align: center;
+            background: #EBEBEB;
+
+            .price {
+                padding-top: 6px;
+                font-size: 24px;
+                color: #777;
+            }
+
+            .misc_tools{
+                margin-top: 6px;
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            a {
+                color: #666;
+            }
+        }
+
+        .game_title {
+            @include single_line;
+            font-size: 22px;
+            margin-bottom: 2px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .meta_tags {
+            .game_tag {
+                display: inline-block;
+                border: 1px solid $border_color;;
+                color: #999;
+                font-size: 16px;
+                border-radius: 3px;
+                padding: 2px 6px;
+                margin: 5px 10px 5px 0;
+            }
+        }
+
+        .game_author {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #888;
+
+            a, .date_format {
+                color: #666;
+            }
+        }
+
+        .press_links {
+            color: #888;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    }
+
+    .press_game_downloads {
+        border-top: 2px solid $border_color;
+
+        .empty_message {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+            margin: 10px;
+        }
+
+        .upload {
+            margin: 10px;
+            font-size: 16px;
+        }
+
+        .download_btn {
+            margin-right: 10px;
+        }
+    }
+
+    .load_more {
+        text-align: center;
+    }
+
+    .check {
+        @include unselectable;
+        background: #A4D69B;
+        box-shadow: 0 0 0 1px darken(#A4D69B, 10%);
+        text-shadow: 1px 1px 1px darken(#A4D69B, 20%);
+        color: white;
+        margin-left: 10px;
+        border-radius: 3px;
+        padding: 0 2px;
+    }
+}
+
+

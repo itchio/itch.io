@@ -1,0 +1,187 @@
+$site_width: 960px;
+$inner_site_width: 960px - 80px; // 40px padding on default container
+
+$font_size: 13px;
+$header_color: #7A6B6E;
+$button_color: #FA5C5C;
+$button_height: 35px;
+$error_color: #D14343;
+$link_color: #DD4A4A;
+
+$buy_color: #24C091;
+$sale_color: #FFC200;
+
+$header_height: 50px;
+
+$border_color: #dadada;
+$edge_border_color: darken($border_color, 4%);
+
+$warning_color: #EFEEBF;
+
+$appearance_editor_width: 220px;
+
+@mixin unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+@mixin default_font {
+    font-family: Lato, sans-serif;
+}
+
+@mixin grad($top, $bottom) {
+    background-color: mix($top, $bottom);
+    background-image: linear-gradient(bottom, $bottom 0%, $top 100%);
+    background-image: -webkit-linear-gradient(bottom, $bottom 0%, $top 100%);
+    background-image: -moz-linear-gradient(bottom, $bottom 0%, $top 100%);
+    background-image: -o-linear-gradient(bottom, $bottom 0%, $top 100%);
+    background-image: -ms-linear-gradient(bottom, $bottom 0%, $top 100%);
+}
+
+@mixin border_box {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    transition: $args;
+}
+
+@mixin prefixed($prop, $args...) {
+    -webkit-#{$prop}: $args;
+    -moz-#{$prop}: $args;
+    -ms-#{$prop}: $args;
+    #{$prop}: $args;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin autograd($color, $amount: 10%) {
+    @include grad($color, darken($color, $amount));
+}
+
+@function grid_width($size, $divisions: 8, $gutter: 20px, $width: $site_width) {
+    @return floor($size * (($width - (($divisions - 1) * $gutter)) / $divisions) + ($size - 1) * $gutter);
+}
+
+@mixin grid_cell($size, $divisions: 8, $gutter: 20px, $width: $site_width) {
+    display: inline-block;
+    vertical-align: top;
+    font-size: $font_size;
+
+    width: grid_width($size, $divisions, $gutter, $width);
+    margin-right: $gutter;
+
+    &:last-child, &.last {
+        margin-right: 0;
+    }
+}
+
+@mixin button($bcolor, $height: 35px, $fz: $font_size + 1px, $depress: true) {
+    @include unselectable;
+    display: inline-block;
+
+    background: $bcolor;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+    font-size: $fz;
+    text-shadow: 1px 1px 2px darken($bcolor, 30%);
+    border-radius: 1px;
+    cursor: pointer;
+    border: 0;
+    text-align: center;
+
+    line-height: $height;
+    height: $height;
+
+    &:hover {
+        background: lighten($bcolor, 2%);
+    }
+
+    &:active {
+        background-color: darken(desaturate($bcolor, 20%), 8%);
+        @if $depress {
+            position: relative;
+            top: 1px;
+        }
+    }
+}
+
+@mixin outline_button {
+    @include border_box;
+    @include transition(all 0.2s ease);
+
+    display: inline-block;
+    border: 2px solid darken(white, 20%);
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+    padding: 3px 10px;
+    font-size: 14px;
+    letter-spacing: 0.025em;
+    white-space: nowrap;
+
+    &:hover {
+        background: white;
+        color: #333;
+
+        color: white;
+        background: $button_color;
+        border-color: $button_color;
+    }
+
+    &:active {
+        background: darken($button_color, 5%);
+        border-color: darken($button_color, 5%);
+    }
+}
+
+@mixin clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    .ie & {
+        $percent: round($opacity * 100);;
+        filter: unquote("alpha(opacity=#{$percent})");
+        -ms-filter: unquote('"progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$percent})"');
+    }
+}
+
+@mixin single_line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin thumbnail_style {
+    box-shadow: 0 0 2px 2px rgba(0,0,0, 0.13), inset 0 0 0 1px white;
+}
+

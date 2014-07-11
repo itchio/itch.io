@@ -1,0 +1,27 @@
+
+.itch_changelog {
+    .changelog_content {
+        p, li {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-weight: normal;
+            font-size: 16px;
+        }
+
+        hr {
+            margin: 40px 0 20px 0;
+            border: 0;
+            height: 1px;
+            background: #dadada;
+        }
+    }
+}

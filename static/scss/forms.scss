@@ -1,0 +1,115 @@
+
+.form {
+    .input_row {
+        margin-bottom: 20px;
+
+        ul.radio_list, ul.check_list {
+            margin: 0;
+            padding: 0;
+
+            li {
+                list-style: none;
+                margin: 8px 10px;
+                padding: 0;
+                color: #444;
+            }
+
+            input {
+                vertical-align: middle;
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+
+    .redactor_box {
+        margin: 8px 0;
+        box-shadow: 0 0 0 1px white, 0px 0px 4px black;
+        border: 1px solid #aaa;
+    }
+
+    .label {
+        color: #444;
+        font-weight: bold;
+
+    }
+
+    .label, label {
+        .sub {
+            font-weight: normal;
+            color: #666;
+
+            a {
+                color: #444;
+            }
+        }
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], textarea {
+        border: 1px solid #aaa;
+        width: grid_width(5, $width: $site_width - 80) - 16 - 2;
+        padding: 8px;
+        border-radius: 2px;
+        margin: 6px 0;
+
+        color: #333;
+
+        // box-shadow: 0 0 0 1px white, 0px 0px 4px black;
+        box-shadow: 0 0 0 1px #FFF, 0px 0px 1px 2px #BEBEBE;
+
+        &:focus {
+            outline: none;
+            border: 1px solid darken(#aaa, 10%);
+        }
+
+        &.simple_border {
+            border: 1px solid #aaa;
+            padding: 4px;
+            color: #333;
+            width: auto;
+            box-shadow: none;
+        }
+
+        &.big_input {
+            font-size: 24px;
+        }
+
+        &.medium_input {
+            font-size: 16px;
+        }
+
+        &.inline_input {
+            width: auto;
+        }
+    }
+
+    input[type="checkbox"] {
+        vertical-align: middle;
+    }
+
+    select {
+        margin: 6px 0;
+    }
+
+    .buttons {
+        margin-top: 20px;
+        color: #999;
+
+        .button {
+            margin-right: 10px;
+        }
+
+        a {
+            color: #666;
+        }
+
+        .right_buttons {
+            line-height: $button_height;
+            float: right;
+        }
+    }
+}
+
+.form_errors {
+    color: $error_color;
+}
+

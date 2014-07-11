@@ -1,0 +1,265 @@
+
+$cell_height: 40px;
+$label_height: 40px;
+
+body {
+    &.dragging  {
+        @include unselectable;
+        cursor: default;
+    }
+}
+
+.view_jams {
+    padding: 0;
+    background: white;
+    padding-bottom: 40px;
+    overflow: hidden;
+    border-bottom: 2px solid $edge_border_color;
+
+    .jams_header {
+        white-space: nowrap;
+        .column {
+            white-space: normal;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+
+    .hosted_jams, .participated_jams {
+        border-bottom: 1px solid $border_color;
+        padding-bottom: 20px;
+    }
+
+    .jams_tools {
+        text-align: center;
+        margin-top: 65px;
+    }
+
+    p {
+        line-height: 1.5;
+        font-size: 16px;
+        margin: 24px 40px;
+        max-width: 600px;
+    }
+
+
+    h2 {
+        @include single_line;
+        font-size: 26px;
+        margin: 20px 40px 0 40px;
+
+        .header_right {
+            color: #666;
+            float: right;
+            font-weight: normal;
+        }
+
+        a {
+            color: #444;
+        }
+    }
+
+
+    .jam_grid {
+        margin: 20px 20px 0 40px;
+    }
+
+    .jam {
+        border: 1px solid $border_color;
+        display: inline-block;
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 300px;
+        margin-right: 20px;
+        font-size: 14px;
+        vertical-align: top;
+
+        h3 {
+            margin: 0;
+            margin-bottom: 5px;
+            @include single_line;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .meta_row {
+            margin-top: 2px;
+
+            a {
+                color: #666;
+            }
+        }
+    }
+
+    .jam_calendar {
+        font-size: 16px;
+
+        .scrollbar_outer {
+            @include unselectable;
+            position: relative;
+            height: 10px;
+            margin-top: 6px;
+
+            .scrollbar {
+                position: absolute;
+                background: #B8B8B8;
+                top: 0;
+                bottom: 0;
+                border-radius: 24px;
+                opacity: 0;
+                @include transition(opacity 0.6s ease);
+
+                &:hover, &.dragging {
+                    background: lighten(#B8B8B8, 3%);
+                }
+
+                &.visible {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .calendar {
+            overflow: hidden;
+            cursor: move;
+            border-bottom: 1px solid $border_color;
+
+            .calendar_scrolling {
+                height: 250px;
+                position: relative;
+                background: white;
+            }
+
+            .calendar_row {
+                position: relative;
+                height: $cell_height;
+                margin: 3px 0;
+            }
+
+            .jam_cell {
+                @include border_box;
+                @include single_line;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                background: #A8A8A8;
+                color: white;
+                line-height: $cell_height;
+                padding: 0 20px;
+
+                &.after_end {
+                    opacity: 0.75;
+                }
+
+                &.small_text {
+                    font-size: 14px;
+                }
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .calendar_rows, .day_markers {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+
+            .elapsed_time {
+                @include border_box;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 50%;
+                background: #F5F5F5;
+                border-right: 5px solid #E9E9E9;
+                box-shadow: 0 0 0 1px #DEDEDE;
+            }
+
+            .day_markers {
+                z-index: 1;
+                @include unselectable;
+
+                .day_marker {
+                    @include border_box;
+                    border-left: 1px solid #dadada;
+                    position: absolute;
+                    top: $label_height;
+                    bottom: 0;
+
+                    &:first-child {
+                        border-left: 0;
+                    }
+
+                    .day_ordinal, .day_name {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        height: $label_height;
+                        line-height: $label_height;
+                        padding-left: 20px;
+                    }
+
+                    .day_ordinal {
+                        top: 0;
+                        border-bottom: 1px solid #dadada;
+                        color: #666;
+                        font-weight: bold;
+                    }
+
+                    .day_name {
+                        bottom: 0;
+                        border-top: 1px solid #dadada;
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        color: #777;
+                    }
+                }
+            }
+
+            .calendar_rows {
+                z-index: 2;
+                top: $label_height * 2 + 2px;
+                bottom: 30px;
+            }
+
+            .month_markers {
+                @include unselectable;
+                height: 20px;
+                background: black;
+                position: relative;
+                z-index: 5;
+
+                .month_marker {
+                    @include border_box;
+                    background: #EFEFEF;
+                    border-left: 1px solid $border_color;
+                    border-bottom: 1px solid $border_color;
+                    border-top: 1px solid $border_color;
+                    color: #444;
+
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    height: $label_height;
+                    line-height: $label_height;
+                    padding: 0 20px;
+
+                    &:first-child {
+                        border-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

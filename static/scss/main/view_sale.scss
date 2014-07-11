@@ -1,0 +1,87 @@
+
+.view_sale {
+    padding: 0;
+
+    .sale_header {
+        margin-bottom: 20px;
+        border-bottom: 1px solid $border_color;
+        padding-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+
+        h1 {
+            margin: 30px 200px 10px 40px;
+            font-size: 26px;
+        }
+
+        .sale_decor {
+            position: absolute;
+            right: 40px;
+            top: 15px;
+            font-size: 125px;
+            color: #E2E2E2;
+        }
+
+        .sale_author, .sale_meta {
+            line-height: 1.5;
+            font-size: 16px;
+            margin: 0 40px;
+        }
+
+        .social_buttons {
+            margin: 20px 40px 0 40px;
+            height: 23px;
+        }
+    }
+
+    p {
+        margin: 0 40px 20px 40px;
+        line-height: 1.5;
+    }
+
+    .admin_panel {
+        padding: 8px 40px;
+        border-radius: 2px 2px 0 0;
+        background: #f1f1f1;
+        color: #444;
+        font-size: 16px;
+
+        strong {
+            color: #666;
+        }
+
+        a {
+            color: #444;
+            margin-left: 5px;
+        }
+    }
+
+    .sale_author {
+        color: #666;
+        a {
+            color: #666;
+            &:hover {
+                color: #444;
+            }
+        }
+    }
+
+    .sale_meta {
+        color: #666;
+    }
+
+    .percent_off {
+        font-weight: bold;
+        color: #222;
+    }
+
+    .game_grid {
+        margin: 30px 20px 30px 40px;
+    }
+
+    .game_grid.single_item {
+        text-align: center;
+    }
+
+}
+

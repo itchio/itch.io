@@ -1,0 +1,334 @@
+
+@import "common";
+@import "base";
+
+$width: 620px;
+$light_border: #dadada;
+$dark_border: #2c2c2c;
+
+$inner_padding: 20px;
+$thumb_width: 180px;
+
+.secure_label {
+    background-image: url("/static/images/stripe/secure.png");
+    width: 115px;
+    height: 12px;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 22px;
+    right: 24px;
+}
+
+.stripe_label {
+    background-image: url("/static/images/stripe/stripe.png");
+    width: 121px;
+    height: 28px;
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    background: #424242;
+    background-image: url('/static/images/navy_blue.png');
+}
+
+button, input {
+    font-family: Lato, sans-serif;
+}
+
+.itch_header {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 5px;
+}
+
+.stripe_checkout {
+    border: 1px solid $dark_border;
+    position: relative;
+
+    width: $width;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+    &.loading {
+        .loader {
+            display: inline-block;
+        }
+
+        .pay_btn {
+            display: none;
+        }
+    }
+
+    .credit_card_form, .game_data {
+        background: white;
+    }
+
+    .game_data {
+        z-index: 2;
+    }
+
+    .loader {
+        display: none;
+    }
+
+    .game_data {
+        overflow: hidden;
+        border-bottom: 1px solid $light_border;
+        position: relative;
+
+        -webkit-transition: box-shadow 0.1s ease-in-out;
+        -moz-transition: box-shadow 0.1s ease-in-out;
+        -ms-transition: box-shadow 0.1s ease-in-out;
+        transition: box-shadow 0.1s ease-in-out;
+
+        &.has_shadow {
+            box-shadow: 0 10px 10px -10px rgba(0,0,0,0.5);
+        }
+
+        &.has_cover {
+            .game_data_content {
+                margin-left: $inner_padding*2 + $thumb_width;
+                border-left: 1px solid $light_border;
+                min-height: 185px;
+            }
+        }
+
+        .data_top {
+            padding: $inner_padding;
+        }
+
+        .data_file_list {
+            border-top: 1px solid $light_border;
+            padding: $inner_padding;
+
+            p {
+                margin: 0;
+                margin-bottom: 4px;
+                font-size: 12px;
+                color: #666;
+            }
+
+            .file_row {
+                line-height: 1.7;
+            }
+        }
+
+        h1 {
+            @include single_line;
+            margin: 0;
+        }
+
+        .purchase_label {
+            font-size: 16px;
+            color: #666;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .purchase_amount {
+            border: 1px solid $light_border;
+            border-radius: 6px;
+            padding: 1px 4px;
+            color: #444;
+        }
+
+        .thumb {
+            float: left;
+            box-shadow: 0 10px 10px -10px rgba(0,0,0, 0.5);
+
+            margin: $inner_padding;
+
+            border-radius: 2px;
+            border: 1px solid $light_border;
+            width: 180px;
+            height: 143px;
+        }
+    }
+
+    .credit_card_form {
+        box-shadow: 0 6px 10px -6px rgba(0,0,0, 0.5);
+        z-index: 1;
+        position: relative;
+
+
+        // inputs with errors
+        .has_error {
+            border: 2px solid red;
+            &:focus {
+                border: 2px solid red;
+            }
+        }
+
+        .input_row {
+            margin: $inner_padding 0 $inner_padding $inner_padding;
+        }
+
+        .card_row {
+            position: relative;
+
+
+            &.visa_card {
+                .card_image {
+                    background-image: url("/static/images/stripe/cards/visa.png");
+                }
+            }
+
+            &.mastercard_card {
+                .card_image {
+                    background-image: url("/static/images/stripe/cards/mastercard.png");
+                }
+            }
+
+            &.amex_card {
+                .card_image {
+                    background-image: url("/static/images/stripe/cards/amex.png");
+                }
+            }
+
+            &.discover_card {
+                .card_image {
+                    background-image: url("/static/images/stripe/cards/discover.png");
+                }
+            }
+
+            &.diners_card {
+                .card_image {
+                    background-image: url("/static/images/stripe/cards/diners.png");
+                }
+            }
+
+            &.jcb_card {
+                .card_image {
+                    background-image: url("/static/images/stripe/cards/jcb.png");
+                }
+            }
+
+            .card_image {
+                width: 32px;
+                height: 20px;
+                background-image: url("/static/images/stripe/cards/placeholder.png");
+                position: absolute;
+                top: 35px;
+                right: $inner_padding + 3px;
+            }
+        }
+
+        .form_footer {
+            background: lighten(#ddd, 4%);
+            padding: $inner_padding;
+            text-align: center;
+
+            .text_links {
+                float: right;
+                margin-top: 10px;
+                margin-right: 5px;
+
+                a {
+                    color: #555;
+                }
+            }
+
+            .button {
+                line-height: 35px;
+            }
+        }
+
+        .form_columns {
+            position: relative;
+            font-size: 16px;
+        }
+
+        .left_column {
+            width: 50%;
+            overflow: hidden;
+        }
+
+        .right_column {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            right: 0;
+            border-left: 1px solid $light_border;
+        }
+
+        .joint_input {
+            margin: $inner_padding 0 $inner_padding $inner_padding;
+
+            .input_row {
+                display: inline-block;
+                margin: 0;
+
+                &:first-child {
+                    margin-right: 10px;
+                }
+
+                input {
+                    width: ($width / 2 - $inner_padding*2 - 2 - 8) / 2 - 10;
+                }
+            }
+        }
+
+    }
+
+    input[type="text"], input[type="email"] {
+        border: 1px solid #aaa;
+        margin: 0;
+        margin-top: 10px;
+        padding: 4px;
+        font-size: 18px;
+        color: #333;
+        width: $width / 2 - $inner_padding*2 - 2 - 8;
+    }
+
+    label {
+        .sub {
+            color: #888;
+            font-size: 14px;
+        }
+    }
+
+    .close_button {
+        $size: 18px;
+        z-index: 2;
+        @include unselectable;
+
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: #e6e6e6;
+        border: 1px solid #c2c2c2;
+        color: darken(#e6e6e6, 40%);
+
+        cursor: pointer;
+
+        font-size: 18px;
+
+        text-align: center;
+        border-radius: 100px;
+
+        width: $size;
+        height: $size;
+        line-height: 17px;
+        text-decoration: none;
+
+        &:hover {
+            background: darken(#e6e6e6, 5%);
+        }
+
+        &:active {
+            top: 9px;
+            box-shadow: inset 2px 0 10px rgba(0,0,0, 0.2);
+        }
+    }
+
+    .form_errors {
+        background: $error_color;
+        color: white;
+        overflow: hidden;
+        padding: $inner_padding;
+    }
+}

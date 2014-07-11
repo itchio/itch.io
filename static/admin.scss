@@ -1,0 +1,57 @@
+
+.exception_row {
+    border: 1px solid silver;
+    padding: 8px;
+    margin-bottom: 10px;
+
+    .label {
+        font-family: monospace;
+        margin-top: 5px;
+    }
+
+    .updated_at, .count {
+        color: #666;
+        font-size: 12px;
+    }
+
+    .count {
+        float: right;
+        &:before {
+            content: "count: ";
+            color: #444;
+        }
+    }
+}
+
+.admin_paypal_pending {
+    .recheck_btn {
+        margin: 0 0 10px 0;
+    }
+
+    tr {
+        &.processing {
+            background: #C0E1FF;
+        }
+
+        &.finished {
+            background: #F5FFC0;
+        }
+
+        &.mark_complete {
+            background: #C0FFD2;
+        }
+
+        &.mark_failed {
+            background: #FFAEEF;
+        }
+
+        &.mark_expired {
+            background: #FFCFAE;
+        }
+    }
+}
+
+#avg_time_graph, #hits_graph {
+    height: 350px;
+}
+

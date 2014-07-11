@@ -1,0 +1,47 @@
+
+.user_register, .user_login {
+    padding: 0;
+
+    .form_errors {
+        margin-bottom: 40px;
+        font-size: 16px;
+    }
+}
+
+.user_register {
+
+    .form_column {
+        @include border_box;
+        border-right: 1px solid #dadada;
+        padding: 40px;
+        margin: 0;
+        width: 50%;
+
+        .text_input {
+            width: 380px;
+        }
+    }
+
+
+    .about_column {
+        @include border_box;
+        border-left: 1px solid #dadada;
+        position: relative;
+        left: -1px;
+        padding: 40px;
+        width: 50%;
+
+        h2 {
+            font-weight: normal;
+            font-size: 18px;
+            margin: 0 0 20px 0;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 0 0 20px 0;
+            line-height: 1.5;
+        }
+    }
+}
+

@@ -1,0 +1,109 @@
+// static pages
+
+.terms {
+    width: 500px;
+}
+
+.faq, .api_base, .terms {
+    .text {
+        pre {
+            background: #222;
+            color: white;
+            padding: 10px;
+            border-radius: 2px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 24px 0;
+        }
+
+
+        ul, li {
+            font-size: 16px;
+        }
+
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        blockquote {
+            margin: 0;
+            background: #efefef;
+            border: 1px solid #dadada;
+
+            p {
+                margin: 10px;
+            }
+
+            border-radius: 6px;
+        }
+    }
+}
+
+.api_base {
+    padding: 0;
+
+    .text {
+        padding: 0 40px 40px 40px;
+
+        p, ul {
+            width: 500px;
+        }
+
+        .prettyprint {
+            background: #222;
+        }
+
+        h3 {
+            margin-top: 60px;
+            code {
+                display: block;
+                margin: 25px 0 20px 0;
+                background: #eee;
+                box-shadow: 0 0 0 10px #EEE;
+            }
+        }
+    }
+}
+
+.faq {
+    .text {
+        width: 500px;
+    }
+
+    .navigation {
+        width: 280px;
+        float: right;
+        a {
+            display: block;
+            line-height: 20px;
+            margin-bottom: 10px;
+
+            &:hover {
+                background: #eee;
+                box-shadow: 0 0 0 4px #eee;
+
+                -webkit-transition: background 0.1s ease-in-out;
+                -moz-transition: background 0.1s ease-in-out;
+                transition: background 0.1s ease-in-out;
+            }
+        }
+    }
+
+
+    h2 {
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+
+        &.highlight {
+            background: #CEFC9C;
+            box-shadow: 0 0 0 10px #CEFC9C;
+        }
+    }
+}
+
+

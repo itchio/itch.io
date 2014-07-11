@@ -1,0 +1,47 @@
+@import "common";
+@import "base";
+@import "lightbox";
+@import "forms";
+
+@import "lib/farbtastic";
+@import "main/upload_popup";
+@import "appearance_editor";
+
+@import "lightboxes/add_game_to_jam";
+@import "main/grids";
+@import "jam/view_jam";
+
+body {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    color: #222;
+    background: white;
+}
+
+
+.jam_page_wrap {
+    @include transition(margin-left 0.15s ease-in-out);
+    min-width: $site_width;
+
+    .show_appearance_editor & {
+        margin-left: $appearance_editor_width;
+    }
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.admin_panel {
+    height: $header_height;
+    line-height: $header_height;
+    background: #333333;
+    color: white;
+    padding: 0 40px;
+    border-bottom: 2px solid white;
+
+    a {
+        color: pink;
+    }
+}

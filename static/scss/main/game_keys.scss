@@ -1,0 +1,157 @@
+
+
+.game_keys, .game_external_keys {
+    padding: 0;
+
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+        width: 600px;
+        margin: 0 0 20px 0;
+    }
+}
+
+.game_keys {
+    .key_row {
+        &.revoked {
+            background: #eee;
+            color: #C9C9C9;
+            a {
+                color: #C9C9C9;
+            }
+
+            .revoke_key_btn {
+                visibility: hidden;
+            }
+        }
+
+        &.new {
+            background: #FFFBCA;
+        }
+
+        .key_preview {
+            color: #666;
+        }
+    }
+
+    .buttons {
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .key_drop {
+        &.loading {
+            @include opacity(0.5);
+        }
+    }
+}
+
+.key_lightbox {
+    max-width: 600px;
+
+    &.claimed {
+        .unclaimed_message, .claim_options {
+            display: none;
+        }
+
+        .claimed_message {
+            display: block;
+        }
+    }
+
+    &.can_be_claimed {
+        .on_can_be_claimed {
+            display: block !important;
+        }
+    }
+
+
+    .claimed_message {
+        display: none;
+    }
+
+    .form {
+        margin: 0 40px 20px 40px;
+        text-align: left;
+
+        .text_input {
+            width: 450px;
+        }
+    }
+
+    .label_form, .claim_options {
+        border-top: 1px solid #dadada;
+        margin: 20px 0 20px 0;
+    }
+
+    .label_form {
+        // border-bottom: 1px solid #dadada;
+
+        &.saved {
+            .icon {
+                @include opacity(1);
+            }
+        }
+
+        label {
+            display: block;
+            margin: 20px 40px;
+        }
+
+        .icon {
+            @include opacity(0);
+            @include transition(opactiy 0.1s ease-in-out);
+
+            margin-left: 10px;
+            color: #666;
+        }
+    }
+
+    .claim_options {
+        .claim_toggle {
+            border: 1px solid #dadada;
+            border-radius: 3px;
+            display: block;
+            margin: 20px 40px;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &.on_can_be_claimed {
+                display: none;
+            }
+
+            &:hover {
+                background-color: lighten(#eee, 4%);
+            }
+
+            input {
+                float: left;
+                margin-top: 15px;
+                margin-left: 15px;
+            }
+
+            p {
+                margin: 10px 20px;
+                margin-left: 40px;
+                font-size: 14px;
+
+                strong {
+                    color: #444;
+                }
+            }
+        }
+    }
+
+    .button_row {
+        margin: 30px 40px;
+
+        .button {
+            color: white;
+        }
+    }
+
+}
+
+.game_external_keys {
+}
+

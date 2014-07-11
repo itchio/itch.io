@@ -1,0 +1,164 @@
+@import "common";
+@import "base";
+@import "lightbox";
+@import "forms";
+
+@import "main/grids";
+@import "lib/farbtastic";
+@import "lib/antiscroll";
+
+@import "appearance_editor";
+
+body {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    color: #222;
+    background: #FAFAFA;
+}
+
+.inner_column {
+    width: $site_width;
+    margin: 0 auto;
+}
+
+.user_page_wrap {
+    @include transition(margin-left 0.15s ease-in-out);
+    min-width: $site_width;
+
+    .show_appearance_editor & {
+        margin-left: $appearance_editor_width;
+    }
+}
+
+.header {
+    overflow: hidden;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+
+.view_user {
+    &.mode_column {
+        .columns {
+            font-size: 0;
+            min-height: 400px;
+        }
+
+        .profile_column {
+            width: 960px - 356px;
+        }
+
+        .game_column, .profile_column {
+            display: inline-block;
+            vertical-align: top;
+            font-size: $font_size;
+        }
+
+        .game_column {
+            width: 315px;
+            // border-left: 1px solid #dadada;
+            padding-left: 40px;
+
+            .empty_message {
+                margin-top: 20px;
+                color: #666;
+            }
+        }
+
+
+        .user_game_grid {
+            .game_cell {
+                width: 315px;
+                margin-bottom: 40px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .game_cell {
+        .game_author {
+            display: none;
+        }
+
+        .game_text  {
+            white-space: normal;
+        }
+    }
+
+
+    h1 {
+        font-size: 34px;
+        font-weight: normal;
+        margin: 40px 0 5px 0;
+    }
+
+    .user_website, .user_twitter {
+        font-size: 16px;
+    }
+
+    .user_links {
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .user_profile {
+        margin-right: 40px;
+    }
+
+}
+
+.admin_panel {
+    background: #333;
+    color: white;
+    position: relative;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+
+    a {
+        color: pink;
+    }
+
+    .admin_panel_inner {
+        height: $header_height;
+        line-height: $header_height;
+        margin: 0 auto;
+        width: $site_width;
+    }
+}
+
+.purchased_games, .collection_row {
+    border-top: 1px solid #dadada;
+    padding: 10px 0 0 0;
+
+    .game_list {
+        padding-top: 5px;
+    }
+
+    h2 {
+        margin-bottom: 10px;
+        a {
+            color: inherit !important;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.footer {
+    border-top: 1px solid #dadada;
+    margin-bottom: 20px;
+    font-size: 12px;
+
+    .footer_inner {
+        width: $site_width;
+        padding-top: 10px;
+        margin: 0 auto;
+    }
+}
+
+
+
+

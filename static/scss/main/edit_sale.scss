@@ -1,0 +1,123 @@
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header { margin-bottom: 8px; }
+.ui-timepicker-div dl { text-align: left; }
+.ui-timepicker-div dl dt { height: 25px; margin-bottom: -25px; }
+.ui-timepicker-div dl dd { margin: 0 10px 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+.ui-tpicker-grid-label { background: none; border: none; margin: 0; padding: 0; }
+
+.ui-timepicker-rtl{ direction: rtl; }
+.ui-timepicker-rtl dl { text-align: right; }
+.ui-timepicker-rtl dl dd { margin: 0 65px 10px 10px; }
+/* end css for timepicker */
+
+
+.edit_sale_form {
+    padding: 0;
+
+    &.has_errors {
+        .form_errors {
+            display: block;
+        }
+    }
+
+    &.loading {
+        .loader {
+            display: inline-block;
+        }
+
+        .buttons a {
+            display: none;
+        }
+    }
+
+    &.is_bundle {
+        .bundle_min_price_row {
+            display: block;
+        }
+    }
+
+    .bundle_min_price_row {
+        display: none;
+    }
+
+    .bundle_toggle {
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    p.directions {
+        margin: 0 0 30px 0;
+        font-size: 16px;
+        line-height: 1.5;
+        max-width: 666px;
+    }
+
+    .form_errors {
+        display: none;
+        margin-bottom: 30px;
+        color: $error_color;
+    }
+
+    .loader {
+        display: none;
+    }
+
+    .duration_row {
+        .date_picker {
+            display: inline-block;
+            width: 150px;
+            margin-right: 20px;
+        }
+
+        .duration_label {
+            margin-right: 8px;
+            color: #666;
+        }
+    }
+
+    .rate_slider_outer {
+        display: inline-block;
+        vertical-align: middle;
+        width: 300px;
+        margin: 10px 20px 10px 0;
+    }
+
+    .rate_value {
+        font-size: 24px;
+    }
+
+    .game_list {
+        margin: 20px 0;
+        width: 550px;
+
+        .game_row {
+
+            input {
+                margin-right: 6px;
+            }
+
+            .game_title {
+                margin-right: 10px;
+            }
+
+            .game_price {
+                color: #666;
+            }
+
+            display: block;
+            padding: 2px 0;
+
+            &:hover {
+                background: #F3F3F3;
+                border-radius: 3px;
+            }
+        }
+    }
+
+    .redactor_box {
+        width: 540px;
+    }
+}
+

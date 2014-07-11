@@ -1,0 +1,16 @@
+.purchase_status {
+    &.failed {
+        .failed_message.hidden {
+            display: block;
+        }
+
+        .loading_message {
+            display: none;
+        }
+    }
+
+    .failed_message.hidden {
+        display: none;
+    }
+}
+

@@ -1,0 +1,83 @@
+.collection_lightbox {
+    width: 600px;
+
+    &.is_complete {
+        .before_submit {
+            display: none;
+        }
+
+        .after_submit {
+            display: block;
+        }
+    }
+
+    form.loading {
+        .loader {
+            display: inline-block;
+        }
+    }
+
+    .after_submit, .loader {
+        display: none;
+    }
+
+    .collection_option {
+        border-bottom: 1px solid #dadada;
+        padding: 15px 0;
+
+        &:first-child {
+            border-top: 1px solid #dadada;
+        }
+
+        .radio {
+            float: left;
+            margin: 0;
+            padding: 0;
+            margin-left: 40px;
+            margin-top: 3px;
+        }
+
+        .option_content {
+            margin-left: 70px;
+        }
+    }
+
+    .new_collection_option {
+        .privacy_input {
+            margin-left: 0;
+        }
+
+        .privacy_toggle {
+            margin-top: 5px;
+            display: block;
+        }
+    }
+
+    .form {
+        margin-top: 40px;
+
+        .collection_name_input {
+            width: 300px;
+        }
+
+        .collection_name_input, .collection_input  {
+            margin-top: 15px;
+        }
+
+        .input_row {
+            margin: 20px 40px;
+        }
+    }
+
+    .buttons {
+        padding: 20px 40px;
+        margin-top: 0;
+    }
+
+
+    .already_in {
+        margin: 20px 40px;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
