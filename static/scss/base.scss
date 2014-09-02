@@ -39,13 +39,17 @@ h2 {
     &.fat {
         font-size: 18px;
         letter-spacing: 0.025em;
-        line-height: 40px;
+        line-height: 36px;
         height: 40px;
         border-bottom: 4px solid #C34848;
         padding: 0 20px;
 
         &:hover {
             box-shadow: none;
+        }
+
+        &.disabled {
+            border-bottom: 4px solid grayscale(#C34848);
         }
     }
 
@@ -159,6 +163,12 @@ $flash_color: #88CCE7;
         margin: 0 0 20px 0;
         padding-left: 2.0em;
     }
+
+    hr {
+        border: 0;
+        height: 1px;
+        background: $border_color;
+    }
 }
 
 .warning_box {
@@ -237,5 +247,28 @@ $flash_color: #88CCE7;
     }
 }
 
+.perf_panel {
+    @include opacity(0.5);
+    @include transition(all 0.2s ease);
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: white;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border: 1px solid $border_color;
+    font-size: 16px;
+    line-height: 1.5;
+
+    &:hover {
+        @include opacity(1);
+        box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    }
+
+    .stat_row {
+        display: inline-block;
+    }
+}
 
 

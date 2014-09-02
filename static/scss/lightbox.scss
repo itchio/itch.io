@@ -18,11 +18,14 @@
 
 #lightbox_container {
     z-index: 1001;
+    @include clearfix;
 
     .lightbox {
         z-index: 1001;
         background: white;
-        box-shadow: 1px 1px 16px rgba(0,0,0, 0.5), 1px 1px 4px rgba(0,0,0, 0.6);
+        //box-shadow: 1px 1px 16px rgba(0,0,0, 0.2), 1px 1px 4px rgba(0,0,0, 0.2);
+        box-shadow: 0 0 0 2px $border_color, 0 0 0 4px white;
+
         position: absolute;
         left: 50%;
         top: 80px;
@@ -55,14 +58,15 @@
 }
 
 .lightbox {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 
     h2 {
         border-bottom: 1px solid #dadada;
-        margin: 30px 0 20px 0;
-        padding: 0 40px 20px 40px;
+        margin: 0 0 20px 0;
+        padding: 25px 40px;
 
         color: #333;
+
         .game_title {
             color: #222;
         }

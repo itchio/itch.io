@@ -1,36 +1,15 @@
 
 .game_grid {
     .game_cell {
+        // width: 315px; // set width for overflow
+        @include has_game_thumb;
+
         display: inline-block;
         vertical-align: top;
         text-align: left;
 
         margin: 0 20px 40px 0;
 
-        // width: 315px; // set width for overflow
-
-        .game_thumb {
-            background-color: white;
-            background-position: 50% 50%;
-            background-size: cover;
-
-            display: block;
-            position: relative;
-
-            width: 315px;
-            height: 250px;
-            @include thumbnail_style;
-
-            .no_cover_text {
-                color: #dadada;
-                font-size: 120px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-left: (-120px / 2);
-                margin-top: (-130px / 2);
-            }
-        }
 
         .thumb_link {
             text-decoration: none;

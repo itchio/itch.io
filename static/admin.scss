@@ -1,3 +1,4 @@
+@import "common";
 
 .exception_row {
     border: 1px solid silver;
@@ -51,7 +52,41 @@
     }
 }
 
-#avg_time_graph, #hits_graph {
-    height: 350px;
+
+.admin_performance {
+    .graph_container {
+        height: 350px;
+    }
 }
 
+.admin_press_applications, .admin_press_links {
+    .press_application, .press_link {
+        border: 1px solid $border_color;
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 20px;
+        margin-bottom: 20px;
+
+        p {
+            margin-top: 0;
+        }
+
+        pre {
+            white-space: pre-wrap;
+        }
+    }
+
+    .pager {
+        .button {
+            margin-right: 10px;
+        }
+    }
+}
+
+.admin_purchase_referrers {
+    .referrer_link {
+        display: inline-block;
+        @include single_line;
+        max-width: 300px;
+    }
+}

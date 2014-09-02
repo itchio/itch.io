@@ -13,6 +13,13 @@
 /* end css for timepicker */
 
 
+.no_games_for_sale {
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
 .edit_sale_form {
     padding: 0;
 
@@ -38,8 +45,28 @@
         }
     }
 
+    &.disable_bundle {
+        .bundle_disabled_message {
+            display: block;
+        }
+
+        .bundle_enabled_fields {
+            display: none;
+        }
+    }
+
+    .bundle_disabled_message {
+        display: none;
+        color: #666;
+    }
+
     .bundle_min_price_row {
         display: none;
+        margin-top: 10px;
+
+        .suggested_bundle_price {
+            font-weight: bold;
+        }
     }
 
     .bundle_toggle {
@@ -119,5 +146,6 @@
     .redactor_box {
         width: 540px;
     }
+
 }
 

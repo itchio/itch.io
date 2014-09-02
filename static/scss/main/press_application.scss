@@ -1,0 +1,25 @@
+
+.press_application {
+    padding: 0;
+
+    .press_header {
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 0;
+            max-width: 600px;
+        }
+    }
+
+    textarea {
+        min-height: 150px;
+    }
+
+    .form {
+        margin-top: 40px;
+
+        div.sub {
+            max-width: 600px;
+        }
+    }
+}

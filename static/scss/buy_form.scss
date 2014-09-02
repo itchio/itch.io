@@ -281,6 +281,59 @@
 }
 
 .form.bundle_buy_form {
+    h3 {
+        margin: 20px 0 15px 0;
+    }
+
+    .receive_row {
+        border: 1px solid $border_color;
+        background: mix($border_color, white, 15%);
+        border-radius: 3px;
+        padding: 20px 25px;
+        margin-bottom: 20px;
+
+        h3 {
+            margin-top: 0;
+        }
+    }
+
+    .game_list {
+        font-size: 16px;
+    }
+
+    .regular_price {
+        color: #666;
+        font-size: 14px;
+
+        &:before {
+            content: " — ";
+        }
+    }
+
+    .game_row {
+        @include single_line;
+        line-height: 1.6;
+    }
+
+    .total_row {
+        color: #444;
+        border-top: 1px solid $border_color;
+        margin-top: 20px;
+        padding-top: 8px;
+
+        del, .savings {
+            color: #999;
+        }
+
+        strong {
+            color: #222;
+        }
+    }
+
+    .platforms {
+        color: #666;
+        margin-left: 10px;
+    }
 }
 
 .buy_lightbox {

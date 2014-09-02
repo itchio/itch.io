@@ -1,8 +1,103 @@
 
-.game_download {
+.game_download, .bundle_download {
     padding: 0;
     padding-bottom: 20px;
 
+    h2 {
+        margin: 40px;
+
+        .object_title {
+            &:before {
+                content: "“";
+                font-weight: normal;
+                color: #999;
+            }
+
+            &:after {
+                content: "”";
+                font-weight: normal;
+                color: #999;
+            }
+        }
+
+    }
+
+    h3 {
+        margin: 20px 40px;
+    }
+
+    .email_capture {
+        background: #FFFED8;
+        color: darken($warning_color, 60%);
+        border-bottom: 1px solid darken($warning_color, 10%);
+        border-top: 1px solid darken($warning_color, 10%);
+        padding: 20px 40px;
+
+        p {
+              margin: 20px 0;
+        }
+
+        .form {
+            .label {
+                color: darken($warning_color, 60%);
+                margin-bottom: 5px;
+            }
+
+            input {
+                background: rgba(255,255,255,0.8);
+                width: 300px;
+            }
+
+            .submit_link {
+                margin-left: 10px;
+            }
+
+            .input_row {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+    .purchase_time, .purchase_email {
+        color: #444;
+        font-style: italic;
+    }
+
+    .purchase_price {
+        font-weight: bold;
+    }
+
+    .email_claim {
+        form.loading {
+            .loader {
+                display: inline-block;
+            }
+        }
+
+        .loader {
+            display: none;
+            margin-left: 10px;
+        }
+    }
+
+    p {
+        margin: 20px 40px;
+        line-height: 1.5;
+        font-size: 16px;
+    }
+
+    .social_buttons {
+        margin: 20px 40px;
+    }
+
+    .bottom_links {
+        font-size: 16px;
+        margin: 20px 40px;
+    }
+}
+
+.game_download {
     .empty_message {
         font-size: 16px;
         margin: 0 0 15px 0;
@@ -56,97 +151,6 @@
         }
     }
 
-    .purchase_time, .purchase_email {
-        color: #444;
-        font-style: italic;
-    }
-
-    .purchase_price {
-        font-weight: bold;
-    }
-
-    .email_capture {
-        background: #FFFED8;
-        color: darken($warning_color, 60%);
-        border-bottom: 1px solid darken($warning_color, 10%);
-        border-top: 1px solid darken($warning_color, 10%);
-        padding: 20px 40px;
-
-        p {
-              margin: 20px 0;
-        }
-
-        .form {
-            .label {
-                color: darken($warning_color, 60%);
-                margin-bottom: 5px;
-            }
-
-            input {
-                background: rgba(255,255,255,0.8);
-                width: 300px;
-            }
-
-            .submit_link {
-                margin-left: 10px;
-            }
-
-            .input_row {
-                margin-bottom: 0;
-            }
-        }
-
-    }
-
-    .email_claim {
-        form.loading {
-            .loader {
-                display: inline-block;
-            }
-        }
-
-        .loader {
-            display: none;
-            margin-left: 10px;
-        }
-    }
-
-    p {
-        margin: 20px 40px;
-        line-height: 1.5;
-        font-size: 16px;
-    }
-
-    h2 {
-        margin: 40px;
-        .game_title {
-            &:before {
-                content: "“";
-                font-weight: normal;
-                color: #999;
-            }
-
-            &:after {
-                content: "”";
-                font-weight: normal;
-                color: #999;
-            }
-        }
-
-    }
-
-    h3 {
-        margin: 20px 40px;
-    }
-
-    .social_buttons {
-        margin: 20px 40px;
-    }
-
-    .bottom_links {
-        font-size: 16px;
-        margin: 20px 40px;
-    }
 
     .game_grid {
         margin-left: 40px - 3px;
@@ -176,7 +180,6 @@
             }
         }
     }
-
 
     .key_claim {
         &.loading {
@@ -248,3 +251,51 @@
     }
 }
 
+.bundle_download {
+    .game_outer {
+        border-top: 1px solid $border_color;
+        border-bottom: 1px solid $border_color;
+    }
+
+    .game_row {
+        @include has_game_thumb;
+        @include clearfix;
+        margin: 0 40px 40px 40px;
+        font-size: 16px;
+
+        .game_thumb {
+            float: left;
+        }
+
+        .game_title {
+            margin: 0;
+            margin-top: 5px;
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .meta_row {
+            @include single_line;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        .game_short_text {
+            color: #666;
+        }
+
+        .button_row {
+            margin-top: 15px;
+        }
+
+        .file_count {
+            margin-top: 6px;
+        }
+
+        .game_row_data {
+            margin-left: $game_thumb_width + 20px;
+        }
+    }
+}

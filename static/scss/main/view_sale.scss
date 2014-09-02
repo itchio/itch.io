@@ -39,6 +39,12 @@
         line-height: 1.5;
     }
 
+    .formatted {
+        hr {
+            margin: 20px 40px;
+        }
+    }
+
     .admin_panel {
         padding: 8px 40px;
         border-radius: 2px 2px 0 0;
@@ -68,11 +74,9 @@
 
     .sale_meta {
         color: #666;
-    }
-
-    .percent_off {
-        font-weight: bold;
-        color: #222;
+        strong {
+            color: #222;
+        }
     }
 
     .game_grid {
@@ -83,5 +87,36 @@
         text-align: center;
     }
 
+    .bundle_seller {
+        text-align: center;
+        margin-bottom: 20px;
+
+        .bundle_info {
+            border: 1px solid $border_color;
+            width: 300px;
+            display: inline-block;
+            font-size: 16px;
+            line-height: 1.5;
+            padding: 10px;
+            border-radius: 2px;
+        }
+
+        .button {
+            vertical-align: top;
+            margin: 0;
+        }
+
+        .savings_label {
+            font-size: 14px;
+            color: #666;
+            padding-top: 6px;
+
+            .savings {
+                margin-left: 2px;
+                font-weight: bold;
+                color: #444;
+            }
+        }
+    }
 }
 

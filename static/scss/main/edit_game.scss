@@ -104,10 +104,6 @@
             .span#{$type} {
                 display: inline;
             }
-
-            .screenshot_editor {
-                visibility: hidden;
-            }
         }
     }
 
@@ -632,6 +628,27 @@
             font-size: 16px;
             line-height: 1.5;
             width: 600px;
+        }
+    }
+
+    .tags_input_row {
+        .tag_input {
+            @include default_font;
+            font-size: 14px;
+            width: 542px;
+            border-color: $input_border_color;
+        }
+
+        .text-core .text-wrap .text-tags .text-tag .text-button {
+            font-size: 14px;
+            height: 19px;
+            @include default_font;
+            background: mix(white, $input_border_color, 75%);
+            border-color: $input_border_color;
+
+            .text-remove {
+                top: 4px;
+            }
         }
     }
 }

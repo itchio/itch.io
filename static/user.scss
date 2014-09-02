@@ -4,6 +4,8 @@
 @import "forms";
 
 @import "main/grids";
+@import "main/upload_popup";
+
 @import "lib/farbtastic";
 @import "lib/antiscroll";
 
@@ -34,6 +36,25 @@ body {
     overflow: hidden;
     padding-bottom: 20px;
     margin-bottom: 20px;
+
+    .has_banner & {
+        .image_header {
+            display: block
+        }
+
+        .text_header {
+            display: none;
+        }
+    }
+
+    .image_header {
+        display: none;
+        text-align: center;
+
+        img.full_width {
+            width: 100%;
+        }
+    }
 }
 
 

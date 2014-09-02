@@ -9,11 +9,34 @@
 @import "buy_form";
 @import "star_picker";
 @import "lightboxes/add_game_to_collection";
+@import "main/grids";
+@import "game/admin_tag_editor";
 
 $admin_panel_height: 32px;
 
+#lightbox_container {
+    .lightbox {
+        .close_button {
+            margin-top: 18px;
+        }
+    }
+}
+
 body {
     background: #eee;
+
+    &.lightbox_open {
+        overflow: hidden;
+        #lightbox_container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: auto;
+            padding-bottom: 40px;
+        }
+    }
 }
 
 .inner_column {
@@ -27,7 +50,7 @@ body {
     hr {
         border: 0;
         height: 1px;
-        background: #dadada;
+        background: $border_color;
     }
 
     .footer {
@@ -155,6 +178,7 @@ body {
         &.has_image {
             img {
                 display: inline-block;
+                max-width: 100%;
             }
 
             h1 {
@@ -975,5 +999,68 @@ body {
             margin-left: 10px;
             color: $error_color;
         }
+    }
+}
+
+
+.after_download_lightbox {
+    width: 800px;
+
+    .bandwidth_row {
+        border-top: 1px solid $border_color;
+        font-size: 14px;
+        color: #666;
+        padding: 20px 40px;
+        text-align: right;
+
+        .powered {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+    h3 {
+        border-top: 1px solid $border_color;
+        padding: 20px 40px 0 40px;
+        margin: 20px 0;
+        color: #444;
+    }
+
+    .game_grid {
+        margin: 20px 0 0 20px;
+        margin-right: 0;
+    }
+
+    .browse_footer {
+        text-align: center;
+        margin-bottom: 30px;
+
+        .outline_button {
+            @include outline_button;
+            color: #444;
+            padding: 5px 17px;
+            font-size: 16px;
+        }
+    }
+
+    .social_buttons {
+        margin: 20px 40px;
+
+        .social_button {
+            display: inline-block;
+            min-width: 120px;
+            vertical-align: top;
+        }
+    }
+
+    .icon-heart {
+        color: #EC4E61;
+        vertical-align: baseline;
+        margin-right: 6px;
     }
 }

@@ -75,9 +75,32 @@ h3 {
     }
 }
 
+.user_panel .header_button,
+.header.wide .browse_button {
+	@include button($button_color, $height: 30px, $fz: 16px);
+	font-size: inherit;
+	padding: 0 10px;
+	box-shadow: 1px 1px 0px rgba(0,0,0, 0.2);
+	letter-spacing: 0.05em;
+	margin-left: 10px;
+
+	&:active {
+		box-shadow: 1px 1px 0px rgba(0,0,0, 0.2);
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 .header {
     $search_height: 30px;
     position: relative;
+	font-size: 16px;
+
+    .inner_column {
+        position: relative;
+    }
 
     &.default {
         color: white;
@@ -85,10 +108,6 @@ h3 {
         height: $header_height;
         min-width: $site_width;
         box-shadow: 0 1px 0 white; //, inset 0 -8px 8px -8px rgba(0, 0, 0, 0.5);
-
-        .inner_column {
-            position: relative;
-        }
 
         .header_logo {
             display: block;
@@ -98,6 +117,10 @@ h3 {
             background: url("/static/images/itchio-white-30.png");
             width: 88px;
             height: 30px;
+        }
+
+        .user_panel {
+            top: 9px;
         }
 
         .browse_button {
@@ -140,8 +163,21 @@ h3 {
         color: #222;
         height: 40px;
 
-        .browse_button {
-            display: none;
+        @media (max-width: 1140px) {
+            .user_panel {
+                .profile_link {
+                    display: none;
+                }
+            }
+        }
+
+        h1 {
+            margin-right: 20px;
+        }
+
+        .browse_button, .game_search {
+            vertical-align: top;
+            margin-top: 1px;
         }
 
         .game_search {
@@ -150,6 +186,7 @@ h3 {
 
         .inner_column {
             width: auto;
+            min-width: 900px;
         }
 
         .header_logo {
@@ -160,13 +197,12 @@ h3 {
             vertical-align: top;
         }
 
-        .user_panel {
-            right: 40px;
-            color: #999;
+        .header_button, .browse_button {
+            box-shadow: none;
+        }
 
-            .header_button {
-                box-shadow: none;
-            }
+        .user_panel {
+            color: #999;
 
             a {
                 color: #444;
@@ -214,7 +250,7 @@ h3 {
             @include border_box;
 
             border: 1px solid #aaa;
-            padding: 4px 8px;
+            padding: 4px 10px;
             font-size: 14px;
             color: #333;
             width: 230px;
@@ -263,9 +299,7 @@ h3 {
     position: absolute;
     top: 0;
     right: 0;
-
-    font-size: 16px;
-    line-height: $header_height;
+	font-size: 16px;
 
     a {
         color: white;
@@ -273,23 +307,6 @@ h3 {
 
         &:hover {
             text-decoration: underline;
-        }
-    }
-
-    .header_button {
-        @include button($button_color, $height: 30px, $fz: 16px);
-        font-size: inherit;
-        padding: 0 10px;
-        box-shadow: 1px 1px 0px rgba(0,0,0, 0.2);
-        letter-spacing: 0.05em;
-        margin-left: 10px;
-
-        &:active {
-            box-shadow: 1px 1px 0px rgba(0,0,0, 0.2);
-        }
-
-        &:hover {
-            text-decoration: none;
         }
     }
 
@@ -349,12 +366,36 @@ h3 {
             color: inherit;
             text-decoration: none;
             letter-spacing: 0.05em;
+            position: relative;
+
+            &.has_bubble {
+                padding-right: 40px;
+            }
+
+            .link_bubble {
+                position: absolute;
+                top: 0;
+                right: 5px;
+                font-size: 10px;
+                text-transform: uppercase;
+                background: $link_color;
+                color: white;
+                border-radius: 4px;
+                padding: 2px 4px;
+                font-weight: bold;
+                line-height: 15px;
+                text-shadow: none;
+            }
 
             &:hover {
                 background-color: #FA5C5C;
                 text-shadow: 1px 1px 2px #B70606;
                 box-shadow: inset 0 0 0 2px white;
                 color: white;
+
+                .link_bubble {
+                    text-shadow: none;
+                }
             }
 
             &:active {

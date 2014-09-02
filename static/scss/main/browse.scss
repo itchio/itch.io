@@ -15,6 +15,25 @@
         margin-top: 10px;
     }
 
+    .warning_box {
+        font-size: 16px;
+        margin: 40px 0;
+        padding: 25px 40px;
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        p {
+            max-width: 600px;
+            line-height: 1.5;
+        }
+    }
+
     .grid_outer {
         background: white;
         border-top: 1px solid $border_color;
@@ -35,6 +54,7 @@
             }
         }
     }
+
 
     .grid_loader {
         background: #f5f5f5;

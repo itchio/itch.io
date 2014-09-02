@@ -57,6 +57,7 @@
         &.loading {
             @include opacity(0.5);
         }
+
     }
 
     .graph_container {
@@ -70,6 +71,19 @@
                 max-width: 320px;
             }
         }
+    }
+}
+
+.purchase_list_table {
+    &.show_emails {
+        .email_cell {
+            max-width: none;
+        }
+    }
+
+    .email_cell {
+        @include single_line;
+        max-width: 150px;
     }
 }
 

@@ -9,6 +9,23 @@
 }
 
 .user_register {
+    .user_configurator {
+        border: 1px solid $border_color;
+        padding: 10px;
+        border-radius: 2px;
+        margin-bottom: 20px;
+
+        strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 0;
+            color: #666;
+            line-height: 1.5;
+        }
+    }
 
     .form_column {
         @include border_box;

@@ -29,6 +29,12 @@ $index_bg: #333;
             display: none;
         }
 
+        &.secondary_new_box {
+            @media (max-width: 1500px) {
+                display: none;
+            }
+        }
+
         .new_col {
             white-space: normal;
             display: inline-block;
