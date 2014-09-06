@@ -27,9 +27,25 @@ format_months <- function(months) {
   strftime(months, "%b %y")
 }
 
-axis_stops <- function(max, chunks, round) {
-  step <- floor(max / chunks / round) * round
-  stops <- unique(c(seq(0, max, step), max))
+axis_stops <- function(max, chunks, nearest=FALSE, log_scale=FALSE, min=0) {
+  if (log_scale) {
+    max <- log10(max)
+  }
+
+  step <- max / chunks
+  stops <- seq(0, max, step)
+
+  if (log_scale) {
+    stops <- 10^stops
+    max <- 10^max
+    step <- 10^max
+  }
+
+  if (nearest) {
+    stops <- floor(stops / nearest) * nearest
+  }
+
+  stops <- unique(c(min, stops, max))
 
   if (do.call(`-`, as.list(rev(tail(stops, n=2)))) < step) {
     # remove second to last item
@@ -39,8 +55,9 @@ axis_stops <- function(max, chunks, round) {
   stops
 }
 
-money_axis <- function(money_cap, side=4) { # default to right side
-  stops <- axis_stops(money_cap, 4, 1000)
+# 4: right side
+money_axis <- function(money_cap, side=4, ticks=4, nearest=1000, log_scale=FALSE, min=0) {
+  stops <- axis_stops(money_cap, ticks, nearest, log_scale, min)
 
   axis(side,
        col=axis_color,
@@ -48,4 +65,39 @@ money_axis <- function(money_cap, side=4) { # default to right side
        las=2, # labels perpendicular
        labels=sprintf("$%s", format(floor(stops), trim=TRUE, big.mark=",", scientific=FALSE)))
 }
+
+
+months_axis <- function(months) {
+  month_ids=unique(c(seq(1, length(months), 3), length(months)))
+
+  axis(1,
+       col=axis_color,
+       at=month_ids,
+       labels=format_months(months[month_ids]))
+}
+
+money_graph <- function(title, sums, months, filename="out.png", width=1000, height=700, nearest=1000) {
+  png(file=filename, width=width, height=height, res=120)
+
+  # bottom, left, top, right
+  op <- par(mar=c(2.5, 2, 2, 6), lwd=2)
+
+  plot(sums,
+       type="b", # dots and lines
+       col=primary_color,
+       ann=FALSE, # no labels or title, added below
+       axes=FALSE)
+
+  months_axis(months)
+  money_axis(max(sums), nearest=nearest)
+
+  title(main=title)
+  par(op)
+}
+
+max_date <- as.Date("2014-9-1")
+truncate_dates <- function(frame, key="date") {
+  frame[frame[, key] < max_date,]
+}
+
 

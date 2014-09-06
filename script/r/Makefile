@@ -6,4 +6,6 @@ all:
 	./game_types.r
 	./payments.r
 	./revenue.r
+	./downloads.r
+	./expenses.r
 

@@ -4,7 +4,7 @@ source("common.r")
 png(file="paid_by_provider.png", width=1000, height=700, res=120)
 
 # bottom, left, top, right
-op <- par(mar=c(5,2,2,6))
+op <- par(mar=c(5,2,2,6), lty=0)
 
 # by payment provider
 res <- dbGetQuery(con, "
@@ -16,13 +16,14 @@ res <- dbGetQuery(con, "
   order by sum_month asc
 ")
 
+res$sum_month <- as.Date(res$sum_month)
+res <- truncate_dates(res, "sum_month")
 
 grouped <- tapply(res$sum, list(month=res$sum_month, source=res$source), identity)
 grouped[is.na(grouped)] <- 0
 grouped <- grouped[,-1] / 100 # remove 0 source column, div cents
 money_cap = max(apply(grouped, 1, sum))
 grouped = t(grouped)
-
 
 barplot(grouped,
         col=colors,
@@ -33,6 +34,7 @@ barplot(grouped,
 
 money_axis(money_cap)
 
+par(lty=1)
 legend("topleft", c("PayPal", "Amazon", "Stripe"), fill=colors)
 title(main="Revenue per month by provider")
 
@@ -41,7 +43,7 @@ par(op)
 
 png(file="currency.png", width=1000, height=700, res=120)
 # bottom, left, top, right
-op <- par(mar=c(5,2,2,6))
+op <- par(mar=c(5,2,2,6), lty=0)
 
 # by payment provider
 res <- dbGetQuery(con, "
@@ -53,6 +55,8 @@ res <- dbGetQuery(con, "
   order by sum_month asc
 ")
 
+res$sum_month <- as.Date(res$sum_month)
+res <- truncate_dates(res, "sum_month")
 
 grouped <- tapply(res$sum, list(month=res$sum_month, currency=res$currency), identity)
 grouped[is.na(grouped)] <- 0
@@ -66,10 +70,12 @@ barplot(grouped,
         col=colors,
         axes=FALSE,
         ann=FALSE,
+        names=format_months(unique(res$sum_month)),
         las=2)
 
 money_axis(money_cap)
 
+par(lty=1)
 legend("topleft", names(grouped[,1]), fill=colors)
 title(main="Revenue per month by currency")
 
@@ -114,7 +120,7 @@ parts <- as.matrix(res)[1,] / res_total$ count * 100
 parts <- sort(parts, decreasing=TRUE)
 names(parts) <- c("PayPal", "Amazon", "Stripe")
 
-op2 <- par(mar=c(3,4,4,2))
+op2 <- par(mar=c(3,4,4,2), lty=0)
 
 barplot(parts,
     col=colors,
@@ -165,8 +171,8 @@ pie(add_p_to_names(parts),
 
 par(op)
 
-png(file="purchase_sources.png", width=1000, height=700, res=120)
-op <- par(mfrow=c(2,2), mar=c(2,2,2,2))
+png(file="purchase_sources.png", width=1000, height=400, res=120)
+op <- par(mfrow=c(1,2), mar=c(2,2,2,2))
 
 # internal vs external purchases
 res <- dbGetQuery(con, "
@@ -180,6 +186,25 @@ pie(add_p_to_names(parts),
     col=colors,
     main="Distribution of purchase sources")
 
+res <- dbGetQuery(con, "
+  select initiator, count(*) from purchases inner join purchase_referrers on purchase_referrers.purchase_id = purchases.id where status = 1 and purchase_referrers.type = 2 and initiator > 0 group by initiator order by initiator asc
+")
+
+parts = res$count
+names(parts) <- c("Game's page", "Bundle", "Widget", "Popup")
+
+pie(add_p_to_names(parts),
+    col=colors,
+    main="External distribution")
+
+
+par(op)
+
+
+png(file="internal_sources.png", width=1000, height=700, res=120)
+op <- par(mar=c(4,4,4,2), lty=0)
+
+# distribution of internal purchases
 res <- dbGetQuery(con, "
   select referrer, count(*) from purchase_referrers inner join purchases on purchase_id = purchases.id and purchases.status = 1 and type = 1 group by referrer
 ")
@@ -195,24 +220,25 @@ slugs[slugs=="browse_bundles"] = "Bundles"
 slugs[slugs=="search"] = "Search"
 
 names(parts) <- slugs
+parts <- parts / sum(parts) * 100
+parts <- sort(parts, decreasing=TRUE)
 
-pie(add_p_to_names(parts),
+barplot(parts,
     col=colors,
+    axes=FALSE,
+    #las=2,
     main="Internal distribution")
 
-res <- dbGetQuery(con, "
-  select initiator, count(*) from purchases inner join purchase_referrers on purchase_referrers.purchase_id = purchases.id where status = 1 and purchase_referrers.type = 2 and initiator > 0 group by initiator order by initiator asc
-")
+stops <- axis_stops(max(parts), 6, 10)
 
-parts = res$count
-names(parts) <- c("Game's page", "Bundle", "Widget", "Popup")
-
-pie(add_p_to_names(parts),
-    col=colors,
-    main="External distribution")
-
+axis(2, # right side
+     at=stops,
+     col=axis_color,
+     labels=sprintf("%d%%", stops),
+     las=2) # labels perpendicular
 
 par(op)
+
 
 png(file="payments.png", width=1000, height=700, res=120)
 op <- par(mfrow=c(2,2), mar=c(2,2,2,2))
@@ -270,7 +296,7 @@ res <- dbGetQuery(con, "
   where status = 1 and sale_id is not null
 ")
 
-op2 <- par(mar=c(4,4,4,4))
+op2 <- par(mar=c(4,4,4,4), lty=0)
 sale_rate_purchase_freq <- table(res$sale_rate)
 
 # plot(density(res$sale_rate))
@@ -280,6 +306,8 @@ hist(res$sale_rate,
      axes=FALSE,
      xlab="Sale rate (percent)",
      main="Frequency of sale rate by sale purchases")
+
+par(lty=1)
 
 axis(1, col=axis_color)
 
@@ -291,6 +319,71 @@ axis(2,
      at=stops)
 
 par(op2)
+
+par(op)
+
+png(file="free_game_payment_dist.png", width=1000, height=700, res=120)
+op <- par(mar=c(5,2,5,2))
+
+# distributiuon of payments above minimum
+res <- dbGetQuery(con, "
+  select price
+  from purchases
+  inner join games on games.id = purchases.object_id
+  where status = 1 and object_type = 1 and games.paid_status = 1 and price < 50000
+")
+
+prices <- res$price / 100
+
+boxplot(prices,
+        log="x",
+        xlab="Price (dollars) log",
+        col="#eeeeee",
+        main="Distribution of payments to completely free games",
+        horizontal=TRUE,
+        axes=TRUE)
+
+summary_chunks <- summary(prices)[c(-2, -5)]
+summary_chunks <- sprintf("%s: $%0.2f", names(summary_chunks), summary_chunks)
+mtext(paste(summary_chunks, collapse=", "))
+
+# money_axis(max(prices), min=min(prices), side=1, ticks=8, log_scale=TRUE, nearest=FALSE)
+
+par(op)
+
+# TODO: percent of payments that are above minimum for paid games
+
+png(file="extra_money_dist.png", width=1000, height=700, res=120)
+op <- par(mar=c(5,2,5,2))
+
+# distributiuon of payments above minimum
+res <- dbGetQuery(con, "
+  select price - games.min_price as price
+  from purchases
+  inner join games on games.id = purchases.object_id
+  where
+    status = 1 and
+    object_type = 1 and
+    price > games.min_price and
+    games.min_price > 0
+    and price < 50000
+")
+
+prices <- res$price / 100
+
+bp <- boxplot(prices,
+        xlab="Price (dollars) log",
+        log="x",
+        col="#eeeeee",
+        main="Distribution of extra money given to paid games",
+        horizontal=TRUE,
+        axes=FALSE)
+
+summary_chunks <- summary(prices)[c(-2, -5)]
+summary_chunks <- sprintf("%s: $%0.2f", names(summary_chunks), summary_chunks)
+mtext(paste(summary_chunks, collapse=", "))
+
+money_axis(max(prices), min=min(prices), side=1, ticks=6, log_scale=TRUE, nearest=FALSE)
 
 par(op)
 

@@ -3,7 +3,7 @@ source("common.r")
 
 # by type
 png(file="game_types.png", width=1000, height=700, res=120)
-op <- par(mar=c(4,4,4,4))
+op <- par(mar=c(5,5,4,4), lty=0)
 
 res <- dbGetQuery(con, "
  select type, count(*) from games
@@ -19,7 +19,9 @@ counts <- sort(counts, decreasing=TRUE)
 
 barplot(add_p_to_names(counts),
     col=colors,
-		axes=FALSE,
+    axes=FALSE,
+    xlab="Primary type",
+    ylab="Count",
     main="Games by type")
 
 axis(2, # right side
@@ -28,8 +30,10 @@ axis(2, # right side
      las=2) # labels perpendicular
 
 
+par(op)
+
 png(file="game_genres.png", width=1000, height=700, res=120)
-op <- par(mar=c(8,4,4,4))
+op <- par(mar=c(8,5,4,4), lty=0)
 
 res <- dbGetQuery(con, "
  select genre, count(*) from games
@@ -48,6 +52,7 @@ barplot(add_p_to_names(counts),
         col=colors,
         axes=FALSE,
         las=2,
+        ylab="Count",
         main="Games by genre")
 
 stops <- axis_stops(max(counts), 4, 100)
@@ -60,7 +65,7 @@ axis(2, # right side
 par(op)
 
 png(file="game_platforms.png", width=1000, height=700, res=120)
-op <- par(mar=c(5,5,4,4))
+op <- par(mar=c(5,5,4,4), lty=0)
 
 #
 res <- dbGetQuery(con, "
@@ -78,14 +83,15 @@ counts <- counts[names(counts) != "total"]
 
 barplot(add_to_names(counts, sprintf("%0.f%%", counts / total * 100)),
         axes=FALSE,
-        main="Game platform distribution",
+        main="Games by platform",
         xlab="Platform",
         ylab="Count",
         col=colors)
 
 axis(2,
      col=axis_color,
-     at=axis_stops(max(counts), 4, 100))
+     at=axis_stops(max(counts), 4, 100),
+     las=2)
 
 par(op)
 

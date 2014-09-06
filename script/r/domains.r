@@ -73,21 +73,21 @@ parts <- sort(parts, decreasing=TRUE)
 par(op)
 
 png(file="purchases_by_site.png", width=1000, height=700, res=120)
-op <- par(mar=c(9,4,4,4))
+op <- par(mar=c(9,4,4,4), lty=0)
 
 barplot(parts,
-        col=primary_color,
+        col=colors,
         las=2,
         axes=FALSE,
         main="Percentage of external purchases by site")
 
 max_p <- max(parts)
 chunk_size = floor(max_p/4 * 100) / 100
-axis_stops <- c(seq(0, max_p, chunk_size), max_p)
-axis_labels <- sprintf("%0.1f%%", axis_stops * 100)
+stops <- c(seq(0, max_p, chunk_size), max_p)
+axis_labels <- sprintf("%0.1f%%", stops * 100)
 
-axis(2, # right side
-     at=axis_stops,
+axis(2, # left side
+     at=stops,
      labels=axis_labels,
      col=axis_color,
      las=2) # labels perpendicular
@@ -95,15 +95,28 @@ axis(2, # right side
 # reddit
 par(op)
 png(file="subreddits.png", width=1000, height=700, res=120)
-op <- par(mar=c(0,2,4,2))
+op <- par(mar=c(10,4,4,1), lty=0)
 
 res <- dbGetQuery(con, "
-select purchase_referrers.referrer as referrer from purchase_referrers inner join purchases on purchases.id = purchase_referrers.purchase_id where purchases.status = 1 and purchase_referrers.type = 2 and purchase_referrers.referrer like '%reddit.com/r/%'
+select lower(purchase_referrers.referrer) as referrer from purchase_referrers inner join purchases on purchases.id = purchase_referrers.purchase_id where purchases.status = 1 and purchase_referrers.type = 2 and purchase_referrers.referrer like '%reddit.com/r/%'
 ")
 
 referrers <- gsub(".*?/r/([\\w]+).*", "\\1", res$referrer, perl=TRUE)
+referrers <- table(referrers)
+referrers <- sort(referrers, decreasing=TRUE)
+referrers <- referrers / sum(referrers) * 100
 
-pie(add_p_to_names(table(referrers)),
+barplot(referrers,
     col=colors,
-    main="Purchases from reddit by subreddit")
+    las=2,
+    axes=FALSE,
+    main="Purchases from Reddit by subreddit")
+
+stops <- axis_stops(max(referrers), 6, 10)
+
+axis(2, # left side
+     at=stops,
+     labels=sprintf("%0.1f%%", stops),
+     col=axis_color,
+     las=2) # labels perpendicular
 
