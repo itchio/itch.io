@@ -4,6 +4,9 @@ con <- dbConnect(PostgreSQL(), user="postgres", dbname="itchio_prod")
 axis_color <- rgb(0.7,0.7,0.7)
 primary_color <- "#DD4A4A"
 
+default_width <- 1000
+default_height <- 600
+default_height_half <- 400
 
 colors <- c(primary_color, "#4A90DD", "#4ADD73", "#DDB14A", "#D07FB5", "#D0DD4A")
 # colors <- rainbow(8)
@@ -56,14 +59,25 @@ axis_stops <- function(max, chunks, nearest=FALSE, log_scale=FALSE, min=0) {
 }
 
 # 4: right side
-money_axis <- function(money_cap, side=4, ticks=4, nearest=1000, log_scale=FALSE, min=0) {
+money_axis <- function(money_cap, side=4, ticks=4, nearest=1000, log_scale=FALSE, min=0, cex=1) {
   stops <- axis_stops(money_cap, ticks, nearest, log_scale, min)
+  stops <- round(stops)
+
+  if (log_scale) {
+    stops <- c(min, stops)
+  }
+
+  stops <- unique(stops)
 
   axis(side,
        col=axis_color,
        at=stops,
+       cex.axis=cex,
        las=2, # labels perpendicular
-       labels=sprintf("$%s", format(floor(stops), trim=TRUE, big.mark=",", scientific=FALSE)))
+       labels=sprintf("$%s", format(stops,
+                                    trim=TRUE,
+                                    big.mark=",",
+                                    scientific=FALSE)))
 }
 
 
@@ -76,7 +90,7 @@ months_axis <- function(months) {
        labels=format_months(months[month_ids]))
 }
 
-money_graph <- function(title, sums, months, filename="out.png", width=1000, height=700, nearest=1000) {
+money_graph <- function(title, sums, months, filename="out.png", width=default_width, height=default_height, nearest=1000) {
   png(file=filename, width=width, height=height, res=120)
 
   # bottom, left, top, right

@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 source("common.r")
 
-png(file="paid_by_provider.png", width=1000, height=700, res=120)
+png(file="paid_by_provider.png", width=default_width, height=default_height, res=120)
 
 # bottom, left, top, right
 op <- par(mar=c(5,2,2,6), lty=0)
@@ -41,7 +41,7 @@ title(main="Revenue per month by provider")
 par(op)
 
 
-png(file="currency.png", width=1000, height=700, res=120)
+png(file="currency.png", width=default_width, height=default_height, res=120)
 # bottom, left, top, right
 op <- par(mar=c(5,2,2,6), lty=0)
 
@@ -82,9 +82,9 @@ title(main="Revenue per month by currency")
 par(op)
 
 
-png(file="linked_providers.png", width=1000, height=700, res=120)
+png(file="linked_providers.png", width=default_width, height=default_height_half, res=120)
 
-op <- par(mfrow=c(2,2), mar=c(2,2,2,2))
+op <- par(mfrow=c(1,2), mar=c(2,2,2,2))
 
 # user has a linked provider
 res <- dbGetQuery(con, "
@@ -101,7 +101,7 @@ pie(add_p_to_names(parts),
     col=colors,
     main="Users that have linked a payment account")
 
-# users that have linked payment
+# linked providers by type
 res <- dbGetQuery(con, "
   select
     count(paypal_email) paypal,
@@ -118,7 +118,8 @@ res_total <- dbGetQuery(con, "
 
 parts <- as.matrix(res)[1,] / res_total$ count * 100
 parts <- sort(parts, decreasing=TRUE)
-names(parts) <- c("PayPal", "Amazon", "Stripe")
+
+names(parts) <- paste(c("PayPal", "Amazon", "Stripe"), "\n", sprintf("%0.2f%%", parts), sep="")
 
 op2 <- par(mar=c(3,4,4,2), lty=0)
 
@@ -136,6 +137,11 @@ axis(2, # right side
      las=2) # labels perpendicular
 
 par(op2)
+par(op)
+
+png(file="sold_game.png", width=default_width, height=default_height_half, res=120)
+
+op <- par(mfrow=c(1,2), mar=c(2,2,2,2))
 
 # created a game
 res <- dbGetQuery(con, "
@@ -171,7 +177,7 @@ pie(add_p_to_names(parts),
 
 par(op)
 
-png(file="purchase_sources.png", width=1000, height=400, res=120)
+png(file="purchase_sources.png", width=default_width, height=default_height_half, res=120)
 op <- par(mfrow=c(1,2), mar=c(2,2,2,2))
 
 # internal vs external purchases
@@ -197,11 +203,10 @@ pie(add_p_to_names(parts),
     col=colors,
     main="External distribution")
 
-
 par(op)
 
 
-png(file="internal_sources.png", width=1000, height=700, res=120)
+png(file="internal_sources.png", width=default_width, height=default_height, res=120)
 op <- par(mar=c(4,4,4,2), lty=0)
 
 # distribution of internal purchases
@@ -219,7 +224,18 @@ slugs[slugs=="after_download"] = "Download"
 slugs[slugs=="browse_bundles"] = "Bundles"
 slugs[slugs=="search"] = "Search"
 
+slugs[slugs=="recs"] = "Other"
+slugs[slugs=="tag"] = "Other"
+slugs[slugs=="my_recs"] = "Other"
+
 names(parts) <- slugs
+
+# group the others
+grouped = aggregate(parts, list(type=names(parts)), sum)
+
+parts <- grouped$x
+names(parts) <- grouped$type
+
 parts <- parts / sum(parts) * 100
 parts <- sort(parts, decreasing=TRUE)
 
@@ -227,7 +243,7 @@ barplot(parts,
     col=colors,
     axes=FALSE,
     #las=2,
-    main="Internal distribution")
+    main="Internal purchases distribution")
 
 stops <- axis_stops(max(parts), 6, 10)
 
@@ -240,23 +256,24 @@ axis(2, # right side
 par(op)
 
 
-png(file="payments.png", width=1000, height=700, res=120)
-op <- par(mfrow=c(2,2), mar=c(2,2,2,2))
+png(file="payments_donate_gift.png", width=default_width, height=default_height_half - 100, res=120)
+op <- par(mfrow=c(1,2), mar=c(1,2,2,2))
 
-# purchases on sale
+# donations
 res <- dbGetQuery(con, "
-  select (case when sale_id is not null then 'On sale' else 'Regular price' end) sale_status, count(*)
+  select (case when donation then 'Web' else 'Downloadable\n' end) donation_status, count(*)
   from purchases
   where status = 1
-  group by sale_status
+  group by donation_status
 ")
 
 parts <- res$count
-names(parts) <- res$sale_status
+names(parts) <- res$donation_status
 
-pie(add_p_to_names(parts),
+pie(add_to_names(parts, sprintf("%0.2f%%", parts / sum(parts) * 100)),
     col=colors,
-    main="Purchases: on sale vs. not")
+    main="Purchases: downloadable vs. web games")
+
 
 # gifts
 res <- dbGetQuery(con, "
@@ -271,23 +288,27 @@ names(parts) <- res$gift_status
 
 pie(add_to_names(parts, sprintf("%0.2f%%", parts / sum(parts) * 100)),
     col=colors,
-    main="Purchases: Gift vs. regular")
+    main="Purchases: gift vs. regular")
 
-# donations
+par(op)
+
+png(file="payments_sales.png", width=default_width, height=default_height_half - 100, res=120)
+op <- par(mfrow=c(1,2), mar=c(1,2,2,2))
+
+# purchases on sale
 res <- dbGetQuery(con, "
-  select (case when donation then 'Donate' else 'Buy' end) donation_status, count(*)
+  select (case when sale_id is not null then 'On\nsale' else 'Regular\nprice' end) sale_status, count(*)
   from purchases
   where status = 1
-  group by donation_status
+  group by sale_status
 ")
 
 parts <- res$count
-names(parts) <- res$donation_status
+names(parts) <- res$sale_status
 
-pie(add_to_names(parts, sprintf("%0.2f%%", parts / sum(parts) * 100)),
+pie(add_p_to_names(parts),
     col=colors,
-    main="Purchases: donation vs. buying")
-
+    main="Purchases: on sale vs. not")
 
 # sale rates
 res <- dbGetQuery(con, "
@@ -296,7 +317,7 @@ res <- dbGetQuery(con, "
   where status = 1 and sale_id is not null
 ")
 
-op2 <- par(mar=c(4,4,4,4), lty=0)
+par(lty=0, mar=c(4,2,2,2))
 sale_rate_purchase_freq <- table(res$sale_rate)
 
 # plot(density(res$sale_rate))
@@ -318,14 +339,12 @@ axis(2,
      labels=sprintf("%0.f%%", stops/length(res$sale_rate) * 100),
      at=stops)
 
-par(op2)
-
 par(op)
 
-png(file="free_game_payment_dist.png", width=1000, height=700, res=120)
+png(file="free_game_payment_dist.png", width=default_width, height=default_height, res=120)
 op <- par(mar=c(5,2,5,2))
 
-# distributiuon of payments above minimum
+# distributiuon of payments to fee games
 res <- dbGetQuery(con, "
   select price
   from purchases
@@ -341,19 +360,23 @@ boxplot(prices,
         col="#eeeeee",
         main="Distribution of payments to completely free games",
         horizontal=TRUE,
-        axes=TRUE)
+        axes=FALSE)
 
 summary_chunks <- summary(prices)[c(-2, -5)]
 summary_chunks <- sprintf("%s: $%0.2f", names(summary_chunks), summary_chunks)
 mtext(paste(summary_chunks, collapse=", "))
 
-# money_axis(max(prices), min=min(prices), side=1, ticks=8, log_scale=TRUE, nearest=FALSE)
+money_axis(max(prices),
+           min=min(prices),
+           side=1,
+           ticks=8,
+           cex=0.8,
+           log_scale=TRUE,
+           nearest=FALSE)
 
 par(op)
 
-# TODO: percent of payments that are above minimum for paid games
-
-png(file="extra_money_dist.png", width=1000, height=700, res=120)
+png(file="extra_money_dist.png", width=default_width, height=default_height, res=120)
 op <- par(mar=c(5,2,5,2))
 
 # distributiuon of payments above minimum
@@ -383,7 +406,28 @@ summary_chunks <- summary(prices)[c(-2, -5)]
 summary_chunks <- sprintf("%s: $%0.2f", names(summary_chunks), summary_chunks)
 mtext(paste(summary_chunks, collapse=", "))
 
-money_axis(max(prices), min=min(prices), side=1, ticks=6, log_scale=TRUE, nearest=FALSE)
+money_axis(max(prices),
+           min=min(prices),
+           side=1,
+           ticks=6,
+           cex=0.8,
+           log_scale=TRUE,
+           nearest=FALSE)
 
 par(op)
+
+# ugly
+res <- dbGetQuery(con, "
+  select min_price from games
+  inner join user_data on user_data.user_id = games.user_id
+  where paid_status = 3 and
+    (paypal_email is not null or amazon_token is not null or stripe_blob is not null);
+")
+
+min_prices <- res$min_price
+min_prices <- min_prices[min_prices >= 50]
+min_prices <- min_prices[min_prices < 99999999] # thanks
+
+print("Distribution of game prices")
+summary(min_prices)
 

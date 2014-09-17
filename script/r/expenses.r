@@ -18,3 +18,10 @@ money_graph(sums=totals$amount,
             nearest=150,
             title="Monthly bill (storage and bandwidth)",
             filename="expenses.png")
+
+money_graph(sums=cumsum(totals$amount + 60),
+            months=totals$date,
+            nearest=150,
+            title="Cumulative money spent on itch.io (storage + servers)",
+            filename="expenses_cumulative.png")
+

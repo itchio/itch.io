@@ -1,8 +1,8 @@
 #!/usr/bin/env Rscript
 source("common.r")
 
-png(file="site_types.png", width=1000, height=700, res=120)
-op <- par(mar=c(4,4,4,4))
+png(file="site_types.png", width=default_width, height=default_height_half + 100, res=120)
+op <- par(mar=c(1,4,4,4))
 
 res <- dbGetQuery(con, "
   select domain, count(*) from (select (regexp_matches(purchase_referrers.referrer, '//(.*?)/'))[1] as domain from purchase_referrers inner join purchases on purchases.id = purchase_referrers.purchase_id where purchases.status = 1 and purchase_referrers.type = 2) as domains group by domain order by count desc;
@@ -72,7 +72,7 @@ parts <- sort(parts, decreasing=TRUE)
 
 par(op)
 
-png(file="purchases_by_site.png", width=1000, height=700, res=120)
+png(file="purchases_by_site.png", width=default_width, height=default_height + 100, res=120)
 op <- par(mar=c(9,4,4,4), lty=0)
 
 barplot(parts,
@@ -82,8 +82,7 @@ barplot(parts,
         main="Percentage of external purchases by site")
 
 max_p <- max(parts)
-chunk_size = floor(max_p/4 * 100) / 100
-stops <- c(seq(0, max_p, chunk_size), max_p)
+stops <- axis_stops(max_p, 4)
 axis_labels <- sprintf("%0.1f%%", stops * 100)
 
 axis(2, # left side
@@ -94,7 +93,7 @@ axis(2, # left side
 
 # reddit
 par(op)
-png(file="subreddits.png", width=1000, height=700, res=120)
+png(file="subreddits.png", width=default_width, height=default_height + 100, res=120)
 op <- par(mar=c(10,4,4,1), lty=0)
 
 res <- dbGetQuery(con, "

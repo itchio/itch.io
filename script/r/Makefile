@@ -1,5 +1,5 @@
 
-.PHONY: all
+.PHONY: all copy
 
 all:
 	./domains.r
@@ -9,3 +9,8 @@ all:
 	./downloads.r
 	./expenses.r
 
+
+
+copy:
+	mkdir -p ../../static/images/blog/store_aug
+	cp *.png ../../static/images/blog/store_aug

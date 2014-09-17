@@ -15,12 +15,12 @@ res <- truncate_dates(res, "sum_month")
 
 money_graph(sums=res$sum,
             months=res$sum_month,
-            title="Revenue from games bought",
+            title="Revenue from games bought by month",
             filename="paid_monthly.png")
 
 money_graph(sums=cumsum(res$sum),
             months=res$sum_month,
-            title="Cumulative revenue from games bought",
+            title="Cumulative revenue from games bought by month",
             filename="paid_cumulative.png")
 
 
