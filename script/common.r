@@ -1,4 +1,4 @@
-library("RPostgreSQL")
+library("RPostgreSQL", quiet=TRUE)
 con <- dbConnect(PostgreSQL(), user="postgres", dbname="itchio_prod")
 
 axis_color <- rgb(0.7,0.7,0.7)
@@ -81,8 +81,12 @@ money_axis <- function(money_cap, side=4, ticks=4, nearest=1000, log_scale=FALSE
 }
 
 
-months_axis <- function(months) {
-  month_ids=unique(c(seq(1, length(months), 3), length(months)))
+months_axis <- function(months, skip=TRUE) {
+  month_ids <- seq(1, length(months))
+
+  if (skip) {
+    month_ids <- unique(c(seq(1, length(months), 3), length(months)))
+  }
 
   axis(1,
        col=axis_color,
@@ -109,9 +113,10 @@ money_graph <- function(title, sums, months, filename="out.png", width=default_w
   par(op)
 }
 
-max_date <- as.Date("2014-9-1")
+max_date <- as.Date("2015-6-1")
 truncate_dates <- function(frame, key="date") {
   frame[frame[, key] < max_date,]
 }
 
+payout_start_date <- as.Date("2015-1-19")
 

@@ -1,21 +1,17 @@
-#!/usr/bin/env Rscript
 source("common.r")
 
-
-png(file="monthly_commits.png", width=1000, height=700, res=120)
+png(file="commits_monthly.png", width=1000, height=500, res=120)
 op <- par(mar=c(4,4,4,4))
-
 
 commits <- system('git log --pretty=format:"%ad" --date=short', intern=TRUE)
 commits <- gsub("\\d+$", "1", commits)
 commits <- as.Date(commits)
 
-
 commits <- table(commits)
 
 plot(commits,
      type="b", # dots and lines
-     main="Monthly commits",
+     main="Commits by month",
      xlab="Date",
      ylab="Commit count",
      col=primary_color,
@@ -32,8 +28,5 @@ axis(4,
      labels=format(floor(stops), trim=TRUE, big.mark=",", scientific=FALSE),
      las=2)
 
-
 mtext(paste("Total:", sum(commits), sep=" "))
-
-par(op)
 
