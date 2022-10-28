@@ -1,1 +1,0 @@
-All markdownfiles in this directory will be made publicly available on the Docs Github repo. Do not put sensitive matrial in any of these files, do not create any files that are not designed  to be public.
