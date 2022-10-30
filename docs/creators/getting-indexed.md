@@ -65,8 +65,8 @@ affected **please contact us through our [support page][support]**.
 There are also some scenarios where your page must be viewed by a moderator
 before it can be indexed. The most common case is for new sellers: If you've
 just created an account and you're selling your first project, then your
-published page is placed in a queue for review. We generally review these the
-same day projects are published. Although your page may not be indexed indexed
+published page is placed in a queue for review. We generally review these within
+a few business days after a project is published. Although your page may not be indexed
 during this time, it is still published and fully functional via your profile
 and URL. We appreciate your patience for this step. Established sellers with no
 history of issues will skip this review step and will be indexed immediately.
