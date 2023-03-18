@@ -63,7 +63,7 @@ Here's a quick overview of some of the basic fields you can provide for your sal
   * **You can set the rate to 100%** if you want your content to be temporarily free.
   * **If you just want to host a bundle** you can set the rate to 0% and provide a bundle price.
 * **Projects** -- You can select all the projects affected by the sale. To help with picking a rate, a preview price is shown next to each item. Select at least 1 project, but as many as you like. Selecting more than one item will allow for everything to be bought together as a bundle.
-* **Bundle price** -- If you have more than one project selected, you can optionally specify a custom *buy all* price. This will give someone an incentive to buy everything at once if they can save some more. itch.io wills how the percent saved on the sale page to let buyers make the decision that's right for them.
+* **Bundle price** -- If you have more than one project selected, you can optionally specify a custom *buy all* price. This will give someone an incentive to buy everything at once if they can save some more. itch.io will show the percent saved on the sale page to let buyers make the decision that's right for them.
 
 There are even more options covered below.
 

@@ -18,9 +18,11 @@ $index
 
 ## Pay what you want pricing
 
-If you're giving your content away for free downloaders will still have the
-opportunity to send you money before they download. If set a minimum price on
-your content then buyers can pay that amount, or anything above.
+On itch.io, any price you set is the *minimum price*. Even if you're giving
+your content away for free, downloaders will still have the opportunity to send
+you money before they download. If you provide a minimum price on your content
+then buyers are prompted to pay that amount, or anything above to gain
+ownership of the product.
 
 > In concept it sounds like a nice idea and in practice it proves to be a great
 > idea.
@@ -33,7 +35,29 @@ your content then buyers can pay that amount, or anything above.
 Just by having this feature, **itch.io** is giving developers a significant
 boost in profits!
 
-## Purchase tiers & bonus content
+## Pricing options
+
+Before we talk about pricing, we should mention briefly how ownership works:
+Whenever someone pays for your project, they become an owner of it. When
+granted ownership, they are given a unique [download key][download-keys] that
+grants them access to the files uploaded to the page. The pricing options
+control what kinds of payments your page is able to accept before granting
+ownership.
+
+Keep in mind, by default, if someone downloads your project for free they do
+not become an owner! Learn more about this on the [Download keys][download-keys]
+page.
+
+When configuring your pricing you have three options to control what kinds of
+payments are accepted, if any:
+
+* **$$0 or Donate** -- When trying to download the project, a payment of the *suggested donation* amount is requested. The viewer can click "No thanks, just take me to the downloads" to skip payment and access the files for free. **Note:** If someone pays for a project, they are granted ownership to it. If they skip payment, they do not get ownership, and can only download the files. This is important to be aware of if you decide to convert your project to *Paid* at a later time.
+* **Paid** -- Customers will have to pay the *minimum price* or above to obtain ownership of the product. As a seller, you are free to change the price at a later time and all buyers will still retain ownership of the product. **Note:** Individually priced files have different rules for access.
+* **No payments** -- All payments are disabled on the project. All files are freely downloadable.
+
+To learn more about ownership, please read our guide on [Download keys][download-keys].
+
+## Purchase tiers through Individually priced files
 
 A good way to encourage someone to spend more on your content is to add
 additional content priced above the minimum.
@@ -45,6 +69,20 @@ soundtrack when paying $$2 or more.
 You can even added priced files when your project is normally free. Encourage a
 donation by offering additional content like levels or music. For example, you
 could offer a level pack for $$2 with an otherwise free game.
+
+**Individually priced files come with a important distinction** with regards to
+ownership: The buyer will only continue to have access to these files if the
+price they paid satisfies the minimum price you set on the file. This means
+that if you change the individually priced file to be more expensive you may
+lock out access to that purchase tier from existing buyers. We strongly
+recommend how you intend to price you project in the future before using an
+individually priced file. Use individually priced files for quick bonus
+content, not set set the price of your content. Use the *minimum price* on your
+project to set the price on your product, as this will allow you to change the
+price at a later time without affecting ownership.
+
+You can learn more about file access on the [Download keys][download-keys]
+guide.
 
 ## Sales & bundles
 

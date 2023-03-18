@@ -109,16 +109,16 @@ complete the entire purchase or download flow.
 $link_btn{"Learn more about the itch.io widget",
   $url_for{"docs", { splat = "creators/widget" }}}
 
-## Can I add custom CSS for my game page?
+## Can I use custom CSS on my game/jam/profile
 
 You sure can… but it's disabled by default. First make sure what you are trying
-to design can't be done with the built-in theme editor. If it can't, then
-[contact us][support] and we'll get you set up with the CSS editor. It's
-disabled by default to ensure a certain level of consistency on project pages
-to make it possible to add new features without breaking things.
+to design can't be done with the built-in theme editor. If it can't, then you
+consider applying for CSS. We manually approve accounts for CSS due to
+implications about accessibility and long term support of pages when using
+custom CSS.
 
-$link_btn{"Learn more about designing pages",
-  $url_for{"docs", { splat = "creators/design" }}}
+$link_btn{"Learn about applying for CSS access",
+  $url_for{"docs", { splat = "creators/css-guide" }}}
 
 ## Is adult content allowed?
 

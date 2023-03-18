@@ -268,11 +268,23 @@ sales to see things that are on sale.
 
 **In many countries it is illegal to misrepresent the cost of your product.**
 
+Note: Bundles are an exception to this rule, since a bundle's discount is due
+to purchasing multiple items together, it is fine to have the bundle discount
+available indefinitely.
+
+### Do not use sales to misrepresent your product's price
+
+Do not change the base price of your product, then apply a sale to return your
+product back to the original price too make it seem like the product is sale
+despite the actual price being unchanged. This is false advertising, and it
+violations consumer protection laws in many regions.
+
 ### Avoid creating sales too frequently
 
-Creating sales too frequently reduces the value of an individual sale. See the
-points from above.
-
+Creating sales too frequently reduces the value of an individual sale. A sale
+is meant to be a special event where your product can be obtained for a
+discount. Do not use price manipulation and sales to mislead the buyer about
+the actual price of your product.
 
 ## Community
 
