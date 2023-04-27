@@ -2,8 +2,7 @@
   title: "itch.io Terms of Service"
 }
 
-> **Updated June 8 2018:** Reverted changes to Acceptable Use clause added with May 24th update that do not reflect how we review material  
-> **Updated May 24 2018:** Rewritten for GDPR support, Publisher terms, & Unclaimed Earnings clause
+> **Updated April 15 2023:** Add direct link to Payoneer's Terms of Service under Acceptable Payment Forms.
 
 This Terms of Service Agreement (“Agreement”) is a legal document that outlines
 and explains your rights and obligations as a user or publisher from Itch Corp.
@@ -148,16 +147,20 @@ discretion.
 <a name="acceptable_use_payments"></a>
 ### 7. Acceptable Payment Forms
 
-> **Summary** You may need to comply with PayPal and Stripe’s acceptable use
-> policies. You agree to pay for something when you enter your payment
-> information. You are the authorized user of any payment information you enter.
+> **Summary** You need to comply with PayPal, Stripe and any of our other
+> payment processor's acceptable use policies if you are utilizing those
+> services. You agree to pay for something when you enter your payment
+> information. You are the authorized user of any payment information you
+> enter.
 
-Publishers who distribute content on the Service for a fee may be subject to
-the acceptable use policies of the Company’s payment providers, Stripe and
-PayPal. You can review the acceptable use policies for our payment providers:
+Publishers who distribute content on the Service for a are subject to the
+acceptable use policies of the Company’s third party payment providers and
+processors, including but not limited to Stripe and PayPal. You can review the
+acceptable use policies for our most common payment processors:
 
-* [PayPal](https://www.paypal.com/us/webapps/mpp/ua/acceptableuse-full)
-* [Stripe](https://stripe.com/us/legal#service-requirements-limitations-and-restrictions)
+* [PayPal](https://www.paypal.com/us/legalhub/acceptableuse-full)
+* [Stripe](https://stripe.com/legal/restricted-businesses)
+* [Payoneer](https://www.payoneer.com/legal/restricted-businesses/)
 
 When you provide payment information to the Company or one of its payment
 providers, you represent that you are the authorized user of the card, PIN, key

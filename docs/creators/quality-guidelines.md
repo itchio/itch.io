@@ -119,6 +119,12 @@ You can enable on your project's edit page: *Metadata » Classification*.
 > adult content classification then we may remove all of your pages from being
 > indexed on our search and browse pages.
 
+
+Additionally, review our policies on payment processors and adult content:
+
+* itch.io FAQ - [Is adult content allowed?][creator-faq-adult]
+* Terms of Service - [Acceptable Payment Forms][terms-acceptable]
+
 ## Provide a cover image for your project
 
 The cover image is typically the first thing someone sees when they uncover

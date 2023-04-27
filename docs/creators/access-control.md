@@ -2,19 +2,22 @@
   title: "Controlling who can access your project"
   share_message: "Customize how you distribute your game with itch.io"
   amp: true
+  line_summary: "Document outlining the different visibility and access options for projects on itch.io, including Draft, Restricted and Public modes, as well as setting a release date and creating community access."
+  full_summary: "The Visibility & Access options on a project's edit page allow control over who can view the project page and its sub-pages. There are three main modes: Draft (only available to project owners), Restricted (available to those with permission), and Public (available to everyone). In addition to page visibility, Download Keys are used to restrict access to files contained on a project page. For Restricted mode, an additional option is available to add a password for visitors to view the page. Public mode has two options: Disable new downloads & purchases, and Unlisted in search & browse. A release date can also be set in the Release info section of the project in the dashboard. All the access modes also apply to sub-pages, such as the community or comments. This can be combined with Exclusive Content to create a message board only available to those who have bought the game."
 }
 
-With the launch of our [refinery toolset](/refinery) we've introduced many
-customization options for controlling how people can access your project. The
-*Visibility & access* options can be found on the bottom of your project's edit
-page. There are three primary modes, with some containing sub-options when you
-select them.
+The *Visibility & access* options provided on a project's edit page allow you
+to control who is able to view your project's page and any of its sub pages.
 
 Here are the primary modes:
 
 * **Draft** -- Only available to project owners
 * **Restricted** -- Available to people you've permitted
 * **Public** -- Available to everyone
+
+
+In addition to page visibility, [Download Keys][download-keys] are used for
+restricting access to files contained on a project page.
 
 $index
 

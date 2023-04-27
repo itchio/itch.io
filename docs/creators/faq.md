@@ -78,7 +78,7 @@ itch.io refers to your project.
 ## Does itch.io take ownership of the content I upload?
 
 No. You will always fully own your content. You are free to remove it at any
-time. You can read more on the [terms of use][terms-rights]. **itch.io** just asks for
+time. You can read more on the [terms of use][terms-content]. **itch.io** just asks for
 the minimum amount of rights necessary to run the site, such as permission to
 show your game page and host your game's assets.
 
@@ -122,16 +122,30 @@ $link_btn{"Learn about applying for CSS access",
 
 ## Is adult content allowed?
 
-There are no restrictions for the kind of content you can host on **itch.io**
-(assuming it's legal). If you plan to collect money for your content then you
-must adhere to the acceptable use policy of the respective payment provider:
+We don't allow hosting content that includes pornographic images or videos of
+real-life humans. Fictional, illustrated, and rendered content is generally
+fine, assuming it's legal. Content glorifying sexual violence is not permitted.
+Depictions of minors, minor-presenting, or suggested minors in a sexual context
+are not allowed and will result in account suspension. 
+
+If you plan to collect money for your content, then **you must adhere to the
+acceptable use policy of all respective payment processors that your account
+utilizes**:
 
 $link_btn{icon = "paypal", "Read Paypal's Terms",
-  "https://www.paypal.com/us/webapps/mpp/ua/acceptableuse-full"}
+  "https://www.paypal.com/us/legalhub/acceptableuse-full"}
 
 $link_btn{icon = "credit-card", "Read Stripe's Terms",
-  "https://stripe.com/us/terms#restricted-use"}
+  "https://stripe.com/legal/restricted-businesses"}
 
+It’s almost impossible to come up with an exhaustive list of unacceptable
+products to sell, so often we have to take content reviews one at a time. If an
+issue arises with your account, then we will contact you and share what options
+you may have. Note that in some cases, if you've collected money while in
+violation of terms, we may be forced to refund all pending transactions, as we
+will not be able to process any more payments or payouts for your account.
+
+> **See more:** Terms of Service - [Acceptable Payment Forms][terms-acceptable]
 
 ## Can share the information itch.io collects about my buyers publicly or with third parties?
 

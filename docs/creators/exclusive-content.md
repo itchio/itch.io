@@ -4,12 +4,11 @@
   amp: true
 }
 
+With Rewards, creators can offer limited-quantity access to their projects if
+customers purchase the project at a specific price point or claim it before the
+quantity runs out. Adding reward tiers to a project serves as an excellent
+method for providing exclusive perks to early buyers.
 
-With *Rewards* you can provide limited quantity access to your project if
-they purchase your project at a specific price point, or if they claim before
-the quantity runs out. Adding a reward to your project is a great way to give
-exclusive perks to your early buyers. It's part of itch.io's [refinery
-toolset](/refinery).
 
 > **itch.io** does not guarantee the fulfillment of rewards, it is the seller's
 > responsibility to coordinate with the buyer to deliver the reward when

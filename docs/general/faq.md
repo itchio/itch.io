@@ -36,19 +36,19 @@ $link_btn{"Learn more about itch.io for creators",
 
 ## How do I find the cool stuff?
 
-Here's a few tips to discover cool new content on itch.io:
+Here are a few tips to discover cool new content on itch.io:
 
 * Keep an eye on the [front page](/) - the projects featured there are staff
   picks and meet a certain level of quality and originality.
 * Use the [randomizer](/randomizer) to find random games according to a few
-  filters you can adjust. Great for findings gems that you might have otherwise
+  filters you can adjust. Great for finding gems that you might have otherwise
   missed.
-* Follow the people that interest you. Don't have anyone in mind?, check out
+* Follow the people that interest you. Don't have anyone in mind? Check out
   the [global creator feed](/feed) or simply keep an eye on the [new
-  releases](/games/newest)
+  releases](/games/newest).
 * If you have an account, browse through [my
   recommendations](/my-recommendations), which are tailored to the content
-  you've played or downloaded. Alternatively, Click the *View related games*
+  you've played or downloaded. Alternatively, click the *View related games*
   button on any project page to find more of the same!
 
 ## Can I organize the content I see/play/own on itch.io?
@@ -58,7 +58,7 @@ collection, which you can then choose to show on your profile.
 
 To add a page to a collection, simply click the 'Add to collection'
 button on the page itself. You can even write some words about it,
-which is displayed next to the page's thumbnail when viewing
+which will be displayed next to the page's thumbnail when viewing
 the collection.
 
 The *Edit collection* button lets you control the visibility of
@@ -67,8 +67,8 @@ the layout (grid or list), and add a description. Additionally, you
 can add contributors to a collection to curate in groups!
 
 > If you need inspiration, check out this collection of [non-small
-> games](http://itch.io/c/10780/non-small-games) or this list of [alts's
-> favorites games of 2014](http://itch.io/c/3570/favorites-of-2014), with longer
+> games](http://itch.io/c/10780/non-small-games) or this list of [alts'
+> favorite games of 2014](http://itch.io/c/3570/favorites-of-2014), with longer
 > blurbs.
 
 ## How can I keep up with my favorite creators?
@@ -102,16 +102,15 @@ take appropriate action.
 
 ## Does itch.io support bitcoin?
 
-We previously supported Bitcoin, but our crypto currency processor, Stripe, has
-removed support for Bitcoin. At this time we have no plans to add a
+We previously supported Bitcoin, but our cryptocurrency processor, Stripe, has
+removed support for Bitcoin. At this time, we have no plans to add
 cryptocurrency support, but we may reevaluate them in the future.
 
 ## Who runs itch.io?
 
 [Leaf Corcoran][leafo] founded itch.io in 2013, and has expanded the company into a
-small dedicated team. If you need to get in touch with the team you can contact
+small dedicated team. If you need to get in touch with the team, you can contact
 us on our [support page][support].
 
 [leafo]: http://twitter.com/moonscript
-
 [ors]: http://blog.itch.io/post/112709605589/introducing-open-revenue-sharing
