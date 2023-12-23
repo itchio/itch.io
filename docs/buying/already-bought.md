@@ -86,6 +86,13 @@ run out of keys for their page, then you will not be able to claim a Steam key.
 When this happens, the developer is notified via an automated system to refill
 the keys.
 
+For some larger bundles on itch.io, Steam keys are not provided as part of your
+purchase. If a Steam key is to be included with a bundle, it will be advertised
+directly on the bundle's page and purchase dialog. If it's not there, then no
+Steam key is included, even if the individual product purchase includes a Steam
+key. This is to prevent placing excessive demand on developers to provide keys
+when participating in large charity bundles.
+
 In some circumstances, our fraud detection system may mark a purchase for
 additional review and will delay access to any external keys, such as Steam
 keys. This is to prevent malicious actors from using stolen credit cards to
