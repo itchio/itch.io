@@ -1,0 +1,16 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Customer Support
+    url: https://itch.io/support
+    about: |
+      **The issue tracker is not for account-specific or payment customer support.**
+      Our support team needs to keep track of support requests in a centralized place
+      to work most effectively, and we are unable to verify who you are on a
+      third-party platform like GitHub. To receive account support, you must contact
+      us through our support page: <https://itch.io/support>.
+
+contributing:
+  - name: Contributing Guide
+    url: https://github.com/itchio/itch.io/blob/master/CONTRIBUTING.md
+    about: Please review the contributing guide before opening an issue.
