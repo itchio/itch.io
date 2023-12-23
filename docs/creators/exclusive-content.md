@@ -33,13 +33,17 @@ you discover you can support more.
 The reward editor lets you specify a custom field to collect from the buyer,
 you can use this to collect the name the buyer wants to use.
 
-### Selling physical goods
+### Selling Physical Goods
 
-Another use cause for rewards is selling physical goods along with your digital
-content. In this example you might create a reward above your minimum price
-that comes with t-shirt. As more shirts become available you can boost the
-quantity. You can specify on the reward that you'd like to collect a shipping
-address, and provide a custom field to get the size of the shirt.
+Another use case for rewards involves selling physical goods alongside your
+digital content. For instance, you might create a reward above your minimum
+price that includes a t-shirt. As more shirts become available, you can
+increase the quantity. You can specify on the reward that you need to collect a
+shipping address and provide a custom field to determine the size of the shirt.
+
+**Note**: Currently, itch.io does not offer any mechanisms for the fulfillment
+of physical goods. If you choose to sell items that require shipping, you will
+bear full responsibility for their fulfillment.
 
 ### Limiting the total number of copies you sell
 
@@ -84,18 +88,19 @@ show up on the reward listing of your project page.
 * **Quantity** -- How many, in total, are there available?
 * **Minimum price** -- What's the minimum purchase price to get the reward?
 
-## Collecting information with custom fields
+## Collecting Information with Custom Fields
 
-If you need to collect additional information from the buyer you can add a
-custom field. There are currently two types: a shipping address and a free form
-piece of text. You can name each field to make it clear what's required.
+If you require additional information from the buyer, you can add a custom
+field. Currently, there are two types of custom fields available: a shipping
+address and a free-form text field. You can assign a name to each field to
+clarify what information is required.
 
-Once someone buys a reward they'll be prompted to fill out the fields on their
-purchase download page.
+Once a buyer purchases a reward, they will be prompted to fill out the fields
+on their purchase download page.
 
-> We currently don't support adding an additional shipping fee to a purchase.
-> We recommend you incorporate the shipping costs into the price of the reward
-> in the meantime.
+> Please note, we currently do not support the addition of an extra shipping
+> fee to a purchase. We recommend incorporating the shipping costs into the
+> price of the reward for the time being.
 
 ## Fulfilling rewards
 
@@ -117,7 +122,6 @@ Instead of deleting the reward you'll archive it.
 An archived reward is no longer purchasable, and it won't show up on your
 project's page. It will only appear in the *Rewards* panel in your
 dashboard so you can track fulfillment.
-
 
 ## Running a limited release with rewards
 

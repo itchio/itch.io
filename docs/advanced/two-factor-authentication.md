@@ -34,7 +34,7 @@ that you and only you can access your account.
 ## What is TOTP?
 
 TOTP (Time-based One-Time Password algorithm) is a [standard algorithm][rfc6238]
-that computes a one-time password from a share key and the current time.
+that computes a one-time password from a shared key and the current time.
 
 It is one of the less constraining and most robust forms of two-factor authentication,
 and is currently used by [companies][] such as GitHub, Amazon, and Facebook.
@@ -47,8 +47,7 @@ of your user settings.
 The first step involves scanning a QR code on your mobile via one of the supported
 TOTP mobile applications. We recommend using:
 
-  - [Google Authenticator][gauth] on Android, iOS and Blackberry
-  - [Authenticator][auth] for Windows Phone
+  - [Google Authenticator][gauth] on Android, iPhone & iPad
 
 The QR code contains the shared secret, as well as helpful reminders such
 as your account name, and the issuer (in this case, itch.io).
@@ -84,7 +83,6 @@ and will not be added to itch.io. TOTP two-factor authentication is a better
 guarantee and works even without mobile network coverage.
 
 [gauth]: https://support.google.com/accounts/answer/1066447?hl=en
-[auth]: https://www.microsoft.com/en-us/store/apps/authenticator/9wzdncrfj3rj
 [rfc6238]: http://tools.ietf.org/html/rfc6238
 [companies]: http://en.wikipedia.org/wiki/Google_Authenticator#Usage
 [sms-2fa]: https://techcrunch.com/2016/07/25/nist-declares-the-age-of-sms-based-2-factor-authentication-over/

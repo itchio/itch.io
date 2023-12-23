@@ -17,82 +17,77 @@ an account or a game for sale yet you can create one now:
 
 $index
 
-There are a few ways a potential buyer can initiate the purchase process. The
-most common is a game's page on itch.io. Other options include the [embeddable
-widget][widget] and the [JavaScript popup API][api-javascript]. All of these methods end in the
-same place on a successful purchase: the game's download page.
+There are several ways for a potential buyer to initiate the purchase process.
+The most common method is through a game's page on itch.io. Other options
+include the [embeddable widget][widget] and the [JavaScript popup
+API][api-javascript]. Regardless of the method used, all successful purchases
+lead to the game's download page.
 
-In order to have a purchasable game on itch.io you must add a payments account.
-You can do so from the [*User settings* page][user-settings-payment].
+To sell a game on itch.io, you must add a payments account. This can be done
+from the [*User Settings* page][user-settings-payment].
 
 ## The purchase dialog
 
-The purchase dialog is opened buy clicking the *Buy Now* button on the game's
-page below the description.
+The purchase dialog can be opened by clicking the *Buy Now* button located on
+the itch.io project page. If the game is priced at $$0 or listed as Pay What You
+Want, this dialog will appear when you click the *Download Now* button.
 
 $image_carousel{
   "/static/images/developers/buying/thumbs/dialog.png",
   caption = "itch.io's purchase dialog"
 }
 
-The purchase dialog has some noteworthy components. The first thing you might
-notice is the input for amount paid. All purchases on itch.io are *pay what you
-want above the minimum*. The buyer is free to change this field to an amount
-they think is fair. If you've set a default price on the *Edit game* page then
-you'll see that filled in automatically.
+The purchase dialog contains several noteworthy components. The first thing you
+might notice is the input for the amount paid. All purchases on itch.io operate
+on a *pay what you want above the minimum* basis. The buyer is free to modify
+this field to an amount they deem fair. If you've set a default price on the
+*Edit game* page, this will be automatically filled in.
 
-Below the price input is the file list. The file list is a very effective way
-to encourage a buyer to pay more for your game if you have individually priced
-content. In the example above there's a soundtrack if the buyer chooses to pay
-$6 or above. If the buyer clicks the tier they want then their purchase amount
-is automatically increased if necessary to allow access to the file after
-purchasing.
+Located below the price input, you'll find the file list. If your project has
+any individually priced files, they can be selected from this list to
+automatically increase the buyer's payment amount. For instance, in the example
+image above, a soundtrack is available if the buyer opts to pay $$6 or more.
+Clicking this will set their purchase price to $$6 if the amount they've
+previously decided on is lower.
 
 $link_btn{"Learn more about pricing",
   $url_for{"docs", { splat = "creators/pricing" }}}
 
-After the file list you'll see the tip buttons. These encourage a buyer to
-add a little extra to their purchase with a single click.
+After the file list, you'll see the tip buttons. These encourage buyers to add
+a little extra to their purchase with a single click.
 
-If the buyer wants to give the game as a gift they can toggle the gift
-checkbox.
+Additionally, if the buyer wants to give the project as a gift, they can toggle
+the gift checkbox.
 
-Lastly we have the payment buttons. In this example two payment providers are
-shown. On your purchase dialogs only the payment providers you've configured
-will show up.
+Lastly, we have the payment buttons. These can vary depending on the methods
+configured by the seller's account, and can provide multiple options for the
+buyer. Depending on the option chosen, the potential buyer will be taken to the
+checkout page of the respective method. (For example, with PayPal, the buyer
+will be taken to PayPal.com to complete their payment.)
 
-What happens next depends on who you select. Here are screenshots of the two
-providers:
-
-$image_carousel{
-  "/static/images/developers/buying/thumbs/paypal.png",
-  "/static/images/developers/buying/thumbs/stripe.png",
-  crop = true,
-  height = 150,
-  width = 200
-}
-
-
-Each path will step the buyer through entering payment information, then
-validate that the purchase has been completed. After completing all the
-necessary steps the buyer is then redirected to the game's download page on
-**itch.io**.
+Upon successfully completing the payment, the buyer is either shown the form to
+send a gift if they selected the gift option, or they are redirected to their
+access page for their purchase.
 
 $link_btn{"Learn about payment options & VAT",
   $url_for{"docs", { splat = "creators/payments" }}}
 
-## After the purchase
+## Accessing the purchase
 
-The download page is the first thing the buyer sees after buying a game. Here
-is what it looks like:
+A successful payment will generate a ["Download Key"][download-keys], which is a unique URL that
+grants access to the product that has been paid for. Here's what it might look
+like:
 
 $image_carousel{
-  "/static/images/developers/buying/thumbs/download_page.png",
+  {
+    src = "/static/images/developers/buying/thumbs/download_page.png",
+    href = "/static/images/developers/buying/download_page.png"
+  },
   caption = "itch.io's purchase dialog"
 }
 
-At the top of the page is a detailed description of the transaction and any
-important information regarding how the download page works.
+At the top of the page, there is a detailed description of the transaction and
+any important information regarding how the download page functions.
 
 It reads:
 
@@ -101,57 +96,58 @@ It reads:
 > to this page. If you ever lose the URL for this page you can request it to be
 > emailed to you from the support page.
 
-As it says, the user's purchase gets them a unique URL where they can download
-the most recently uploaded files provided by the developer. If you need to send
-out a new version just upload it. You can optionally contact all the purchasers
-using the [Send email][4] functionality.
+As a seller, you can publish new files for your project and they will
+automatically be made available on the Download Key page. If you need to notify
+your buyers of a critical or major update, you can use the [Send email][4]
+functionality.
 
 $link_btn{"Learn about interacting with your fans",
   $url_for{"docs", { splat = "creators/interact" }}}
 
-Below that is a list of files. The buyer just needs to click once to initiate a
-download immediately.
 
-If your game has any Steam or other keys associated with it, then the key claim
-area sits below. External download keys are only distributed on demand when the
-buyer clicks the button the first time.
+The download key page can include the following components:
 
-Lastly there are the *Download and install instructions*. This is an optional
-but highly recommended field on the game edit page.  Here you can describe
-anything the buyer needs to know in order to run your game. You can also
-include contact information or links to any resources relevant to the game.
-This text is only available to buyers if your game is only available through
-purchasing.
+* An area to download any files that have been uploaded
+* Links to the project's community page and any other links you have added to your page
+* An area to generate an invoice for the purchase via the More dropdown menu
+* If the project provides any External Keys, such as a Steam Key, then there is a button to claim access to a key
+* *Download and install instructions* that have been provided on the project edit page are also displayed. If there are specific instructions on how to run or use the project, please provide them.
+
+Additionally, if the buyer doesn't have an itch.io account, they are given the
+option to link their purchase to an account. An itch.io account is not
+necessary to purchase something, but it is recommended.
 
 ## The purchase email
 
-After purchasing a game the buyer will also receive an email containing
-information about the purchase and a link to their unique download URL. It
-looks like this:
+After purchasing a game, the buyer will also receive an email receipt
+containing instructions on how to access their purchase.
+
+It might look something like this:
 
 > Thank you for purchasing 'X-Moon'
 >
-> You purchased 'X-Moon' for $6.00.
+> You purchased 'X-Moon' for $$6.00.
 >
 > If you haven't gotten the game yet, you can find it on the [download page](#).
 >
 > Your download URL is unique to your purchase. Please do not share it. If you
 > ever lose access to the URL you can always re-request it on the itch.io
-> [support page][4].
+> [support page][support].
 >
 > **powered by [itch.io](#)**
 
 
-## Accounts and purchases
+## Accounts and Purchases
 
-**itch.io** accounts are not necessary to make purchases. A purchase is
-associated with an email address. If someone has lost their purchase
-information they can [request it to be re-sent to their email address][support] from
-the support page.
+An **itch.io** account is not required to make purchases. Each purchase is
+associated with an email address. If a user has misplaced their purchase
+information, they can [request it to be re-sent to their email
+address][support] via the support page.
 
-Creating an account on itch.io is recommended though. It lets a buyer organize
-all their purchases in one spot. Purchases are found on the *My collections*
-page, and can easily be re-downloaded from there.
+However, we highly recommend creating an account on itch.io. This allows a
+buyer to organize all their purchases in one place, and access their files in
+the [itch.io app][app]. Purchases can be found on the *My Collections* page and
+can be easily re-downloaded from there.
 
 ## Start selling today!
 

@@ -49,7 +49,7 @@ other install locations and make them the new default, to avoid filling up
 your system disk.
 
 <img style="max-height: 250px;"
-src="https://dl.itch.ovh/itch-faq/install-locations.png">
+src="https://storage.googleapis.com/dl.itch.ovh/itch-faq/install-locations.png">
 
 ## How are games executed?
 
@@ -88,14 +88,14 @@ You can use the "Send feedback" button to report them to our [dedicated
 compatibility tracker][compatibility-tracker] and
 help us get running!
 
-<img class="showcase" style="max-height: 250px;" src="https://dl.itch.ovh/itch-faq/send-feedback-game.png">
+<img class="showcase" style="max-height: 250px;" src="https://storage.googleapis.com/dl.itch.ovh/itch-faq/send-feedback-game.png">
 
 ## Where can I report bugs?
 
 Use the 'Send feedback' item of the main menu (bottom-left, click on your name),
 this will prefill an issue with your platform and app version on our [issues tracker on github][issue-tracker].
 
-<img class="showcase" style="max-height: 350px;" src="https://dl.itch.ovh/itch-faq/send-feedback.png">
+<img class="showcase" style="max-height: 350px;" src="https://storage.googleapis.com/dl.itch.ovh/itch-faq/send-feedback.png">
 
 ## How can I help with the app?
 
@@ -104,13 +104,13 @@ Even if you don't write code, you can often help out by reporting whether
 certain solutions do or do not work on your system, or by pointing to games
 who are affected by a certain issue.
 
-<img class="showcase" style="width: 80%;" src="https://dl.itch.ovh/itch-faq/issues.png">
+<img class="showcase" style="width: 80%;" src="https://storage.googleapis.com/dl.itch.ovh/itch-faq/issues.png">
 
 * If you do write code, announce your intention to tackle an issue by commenting
 on it first (to avoid duplicate work), and eventually submit a [Pull
 Request](https://github.com/itchio/itch/pull/new/master).
 
-<img class="showcase" style="width: 80%;" src="https://dl.itch.ovh/itch-faq/pulls.png">
+<img class="showcase" style="width: 80%;" src="https://storage.googleapis.com/dl.itch.ovh/itch-faq/pulls.png">
 
 Make sure to adhere to our [Code of Conduct][coc], so
 that everyone feels welcome!
@@ -120,7 +120,7 @@ that everyone feels welcome!
 The app is powered by [Electron][electron] and in JavaScript, with some native helpers written in Go, C, C++, and Objective-C.
 
 <img style="max-height: 520px;"
-src="https://dl.itch.ovh/itch-faq/code.png">
+src="https://storage.googleapis.com/dl.itch.ovh/itch-faq/code.png">
 
 The app and all its helpers are open-source, you can browse their code on our
 [Github organization][gh-org].

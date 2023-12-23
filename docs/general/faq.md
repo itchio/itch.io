@@ -100,11 +100,27 @@ Every **itch.io** page has a *Report* link down at the bottom. It opens a
 form that sends a message directly to the itch.io admin team, which will
 take appropriate action.
 
+
+## How can I delete my account?
+
+To delete your itch.io account, follow the steps below:
+
+1. Log into your itch.io account.
+2. Navigate to [Delete Account][delete-account] in your Account Settings.
+3. Read the information carefully to understand the consequences of deleting your account. This action is irreversible.
+4. If you still wish to proceed, follow the instructions on the page to delete your account.
+
+Please note that deleting your account will result in the loss of any profiles,
+posts, uploads, pages, jams, etc. created by the account. All purchases linked
+to the account will no longer be available for download. Some data may be
+retained for legal and tax purposes. In some cases you may be requried to
+submit a deletion request to our support team.
+
 ## Does itch.io support bitcoin?
 
 We previously supported Bitcoin, but our cryptocurrency processor, Stripe, has
 removed support for Bitcoin. At this time, we have no plans to add
-cryptocurrency support, but we may reevaluate them in the future.
+cryptocurrency support.
 
 ## Who runs itch.io?
 

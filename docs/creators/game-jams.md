@@ -124,10 +124,10 @@ If you need us to review votes on a jam for suspicious activity you can
 
 ### Rating queue
 
-The *rating queue* is a special mode you can enable on ranked jams to help
-submissions reach a minimum number of votes in a fair manner. It works by
-requiring the set of voters that you choose to vote from a random set of
-entries (Default of 5 but you can set how many).
+The *rating queue* is a unique mode you can enable on ranked jams to assist
+submissions in reaching a minimum number of votes fairly. It operates by
+requiring a group of voters that you select to vote from a random assortment of
+entries (default is 5, but you can adjust this number).
 
 This can help with many issues:
 

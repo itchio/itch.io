@@ -147,29 +147,28 @@ will not be able to process any more payments or payouts for your account.
 
 > **See more:** Terms of Service - [Acceptable Payment Forms][terms-acceptable]
 
-## Can share the information itch.io collects about my buyers publicly or with third parties?
+## Can I share the information itch.io collects about my buyers publicly or with third parties?
 
-**No!** It is a violation of our privacy policy to share private, identifiable
-information that itch.io collects about buyers. itch.io's dashboard provides
-sellers with tools & information to help them identify any suspicious activity
-or abuse. The information can only be used for your own personal records, and
-for bookkeeping if necessary.
+**No!** Sharing private, identifiable information that itch.io collects about
+buyers is a violation of our privacy policy. The itch.io dashboard provides
+sellers with tools and information to help identify any suspicious activity or
+abuse. This information can only be used for your personal records and for
+necessary bookkeeping.
 
-Taking this information out of itch.io to be shared publicly or with
-third-party services **may result in the suspension of your account**. If you
-have any issues or concerns please [contact us][support].
+Publicly sharing this information or with third-party services **may result in
+the suspension of your account**. If you have any issues or concerns, please
+[contact us][support].
 
-This information includes fields like: Email address, Name, IP Address, Country
-Code, and Transaction IDs.
+The information includes fields such as: Email address, Name, IP Address,
+Country Code, and Transaction IDs.
 
-**Do not automatically sign up people for mailing lists.** If you'd like your
-buyers to sign up for your list then you must get explicit consent from them.
-Some appropriate mailing-list sign-up methods include having a link on your
-project's description, install instructions, or in your project itself. ([Learn more
-about GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation))
+**Do not automatically sign people up for mailing lists.** If you want your
+buyers to subscribe to your list, you must obtain explicit consent from them.
+Appropriate methods for mailing-list sign-up include providing a link on your
+project's description, installation instructions, or within your project
+itself. ([Learn more about
+GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation))
 
-The email address that itch.io provides, along with the email tool, are made
-available if you need to contact buyers with news related specifically to their
-transaction. This information can not be shared or sold with other
-third-parties.
-
+The email address provided by itch.io, along with the email tool, is available
+for you to contact buyers with news specifically related to their transaction.
+This information cannot be shared or sold to third parties.

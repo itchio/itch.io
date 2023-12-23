@@ -9,29 +9,25 @@ here to clear things up and give you some tips!
 
 $index
 
-## Why should I follow other accounts?
-
 Following another account on itch.io is a simple way to stay up to date with
-what they're doing. You can follow as many accounts as you like. In order to
-get the most out of itch.io we recommend following everyone you find
-interesting.
+what they're doing. You can follow as many accounts as you like. To get the
+most out of itch.io, we recommend following everyone you find interesting.
 
-Here are some things that will happen once you're following someone:
+Here are some benefits of following someone:
 
-* Your [Feed][my_feed] will be populated with the activity of the account you followed. This includes, but is not limited to: new games published, games rated, things added to collections, devlog & blog posts written.
-* When that account publishes a new game, you'll get an email notification about it (assuming you haven't disabled notifications in your account settings)
-* The person you followed will get a notification, making them feel warm inside
+* Your [Feed][my_feed] will be populated with their activity, including new games published, games rated, things added to collections, and devlog & blog posts written.
+* You'll receive an email notification when they publish a new game (unless you've disabled notifications in your account settings).
+* The person you followed will receive a notification, which can make them feel appreciated.
 
-So, in conclusion, following someone is a simple way to support them and keep
-track of their latest activity. On top of that, following more people helps you
-craft your feed into a great source of the latest happenings in the indie game
-dev world.
+In conclusion, following someone is a simple way to support them and keep track
+of their latest activity. Following more people also helps you create a great
+source of the latest happenings in the indie game dev world.
 
 ### Who should I follow?
 
-That's for you to decide! We generally recommend following anyone that you've
-positively interacted with. No need to be picky, if you end up not liking what
-they do you can always unfollow them later.
+That's for you to decide! We generally recommend following anyone with whom
+you've had positive interactions. No need to be picky; if you end up not liking
+what they do, you can always unfollow them later.
 
 The itch.io site suggests people for you to follow based on your activity as
 well. You can find your suggestions on your homepage and on [your
@@ -40,47 +36,42 @@ feed][my_feed].
 ### Where can I see who I follow?
 
 If you go to [your feed][my_feed], you can click the **followers** and
-**following** section to see who your followers are and who's following you.
+**following** sections to see who your followers are and who you're following.
 
 ## Why should I try to get more followers?
 
-If you're a game developer of creator on itch.io then getting followers can be
-an effective way to build your audience. Aside from boosting your account's
-cred on itch.io, having more followers means having more people you can market
-your work too.
+If you're a game developer or creator on itch.io, gaining followers can be a
+highly effective strategy to build your audience. Not only does it enhance the
+credibility of your account on itch.io, but it also provides you with a larger
+group of people to whom you can market your work.
 
-* New games or projects you release will be emailed to your followers
-* New devlog posts, and any other account activity, will be published to your followers' feeds
-* If a project of yours goes on sale then anyone who follows you and doesn't own it yet is eligible for an email notification for the sale
+* Your followers will receive an email whenever you release new games or projects.
+* Any new devlog posts or other account activity will appear in your followers' feeds.
+* If you put one of your projects on sale, followers who do not yet own it will receive an email notification about the sale.
 
-Having a strong follower base means that the next time you launch a project on
-itch.io you'll be maximizing the number of people who see it.  This can be an
-important part of getting your project to rise up in our listings or have a
-chance at being featured on our homepage.
+Maintaining a robust follower base ensures that when you launch a new project
+on itch.io, you are maximizing the visibility of your work. This can play a
+crucial role in elevating your project in our listings and potentially being
+featured on our homepage.
 
 ### What's the best way to get more followers?
 
-itch.io loves helping developers get more followers. We have many reminders for
-anyone who positively interacts with your project. This includes whenever
-someone purchases, downloads, or rates your project.
+At itch.io, we love helping developers get more followers. We have many
+reminders for anyone who positively interacts with your project, including
+whenever someone purchases, downloads, or rates your project. However, this may
+not be enough, so we also recommend that creators manually promote their
+itch.io pages. Simply telling someone to follow you outright isn't the most
+effective approach, so we suggest including an incentive as well. Here's an
+example:
 
-This may not be enough though, so we also recommend creators to manually
-promote their itch.io pages as well. Telling someone to follow you outright
-isn't the most effective approach, so we recommend you include some incentive
-as well! Here's an example:
+> If you want to see my progress, you can follow my itch.io page here: YOUR URL
 
-> If you want see my progress you can follow my itch.io page here: YOUR URL
+If you have a completed project, you can say:
 
-Or if you have a completed project:
+> Did you like my game XXX? You can get updates by following my itch.io page: YOUR URL
 
-> Did you like my game XXX, you can get updates by following my itch.io page: YOUR URL
-
-You can suggest to follow you  by linking to your profile page. Posting on
-social media, your blog, and other websites is a good way to increase your
-audience.
-
-If you have a completed work then you can also suggest someone gives you a
-follow directly within your game. For HTML games, you can consider suggesting a
-follow after someone has played your game for a bit.
-
-
+You can suggest a follow by linking to your profile page. Posting on social
+media, your blog, and other websites is a good way to increase your audience.
+If you have a completed work, you can also suggest someone gives you a follow
+directly within your game. For HTML games, you can consider suggesting a follow
+after someone has played your game for a bit.

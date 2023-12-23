@@ -4,24 +4,37 @@
   amp: true
 }
 
+The Kickstarter import tool on **itch.io** simplifies the process of
+distributing digital rewards. By importing your backer list, each backer is
+granted an itch.io [Download Key]($url_for{"docs", splat =
+"creators/download-keys"}). These keys may contain files or Steam keys,
+depending on the amount pledged.
 
-**itch.io**'s Kickstarter import tool makes it easy to distribute digital
-rewards by importing your backer list to grant each backer an itch.io download key with
-files or Steam keys based on their pledge amount.
-
-Once you've imported your backers you can easily send them a customized email
-with their download URL using itch.io's contact tools.
+After importing your backers, you can utilize the email tool to send them a
+customized email featuring their download URL. Alternatively, you can share the
+public claim URL, which grants keys to those who have an account with an email
+that matches one from your import.
 
 $index
 
 ## Importing by CSV
 
 To get started you'll need to export your backer list from your Kickstarter
-project's edit page.
+project's edit page:
 
-Once you've exported the file, head to the *Distribute* tab on your project's
-dashboard page on itch.io. From there you can find *Kickstarter import* on the
-sidebar.
+1. Sign in to your Kickstarter account.
+2. Go to your project's page.
+3. Click on the "Backer Report" tab in your project dashboard.
+4. In the Backer Report, find and click on the "Download" button.
+5. Select the "Export to CSV" option.
+
+> Please note that Kickstarter's UI can change over time, so these steps might
+> not always be accurate. If you are having trouble, check with Kickstarter's
+> documentation or contact their support for assistance.
+
+Once you've obtained a CSV file, navigate to the *Distribute* tab on your
+project's dashboard page on itch.io. From there you can find *Kickstarter
+import* on the sidebar.
 
 <div class="image_caption_wrapper">
 <img class="image_holder" src="/static/images/docs/kickstarter-import.png" alt="Kickstarter Import" />
@@ -30,6 +43,12 @@ sidebar.
 
 From the import page click *Select a CSV to import* to begin. You'll be
 prompted to upload the CSV file you downloaded from the Kickstarter website.
+
+Our system will process your uploaded file directly in your browser, and only
+send the necessary information to our servers to create the access keys. Other
+personally identifying information contained in the CSV is not sent to our
+servers. If you're concerned about privacy you can prepare a minimal CSV in the
+format described in [Custom Import](#custom-import).
 
 ### Creating backer groups
 
@@ -73,64 +92,69 @@ From there you can download a CSV file that contains the mapping of email
 address to download key URL. If you have a system to send emails already then
 you're free to distribute the keys yourself. If not, read on.
 
-### Distributing keys through email
+### Distributing Keys via URL
 
-A Kickstarter import creates a *Download Key Group* for each group specified
-during the import. You can see these groups if you navigate to the *Download
+Once you've completed an import, a *backer access* URL will be provided. You
+can distribute this URL to your backers for them to claim access. If a visitor
+with a verified itch.io account uses the URL and their email address matches
+one from your import, they will be granted access. You can freely share this
+URL because only authorized accounts can retrieve their download key. Please
+note that an itch.io account is necessary for this process to enable email
+verification.
+
+### Distributing Keys via Email
+
+A Kickstarter import generates a *Download Key Group* for each group specified
+during the import. These groups can be viewed by navigating to the *Download
 Keys* page within your project's dashboard.
 
-Like any other key group, you can use our *Emails* tool to send an email to key
-owners with a link to their key. Head to the *Interact* tab to find the email
-editor. As you're drafting your email, just select the appropriate groups in
-the recipients field.
+Similar to any other key group, our *Emails* tool can be used to send an email
+to key owners with a link to their key. Visit the *Interact* tab to access the
+email editor. While drafting your email, simply select the appropriate groups
+in the recipients field.
 
-Ensure the *Include download link at bottom of email* option is checked to
-allow the recipients to get access to their new key
+Make sure to check the *Include download link at the bottom of the email*
+option. This allows the recipients to access their download key.
 
-### Updating the import
+> **Note:** Since you've imported a list of emails from a third-party source,
+> you'll need to have your account approved to send the email. This step is
+> required to prevent spammers from misusing our service. Please first create
+> your project page and, if possible, draft the email. Then, [contact our
+> support team][support] to request permission. Be aware that it might take
+> some time for your request to be reviewed. Therefore, consider this when
+> planning your distribution schedule. Provide as much information as possible
+> to help us verify the authenticity of your request. Alternatively you can use
+> the URL method described above to instantly distribute keys.
 
-If you need to add more backers then you can upload the updated export CSV file
-and go through the import process just as before. Any email addresses that have
+### Updating the Import
+
+If you need to add more backers, you can upload the updated export CSV file and
+go through the import process just as before. Any email addresses that have
 already been assigned keys will not have duplicate keys created.
-
-## Importing through the Kickstarter API
-
-We also support doing backer import through the Kickstarter API. We recommend
-trying a CSV import first, it's completely self service. In order to use the
-Kickstarter import you'll need to add the itch.io account as a contributor to
-your project, with access to the backer list.
-
-Once you've added us as a contributor we'll be notified and we'll contact you
-about the next steps.
-
-To start add the following email address as a contributor: 
-
-> support@itch.io
-
-## Need more control?
-
-If you need more control over the import process then don't hesitate to
-[contact us][support] and we'd be glad to work with you to make sure you import
-and assign exactly what you need.
-
 
 ## Indiegogo
 
 Our import tool also supports CSV exports from Indiegogo. All the same
-functionality available for Kicksarter can be used, including splitting backers
-into groups and emailing out keys.
+functionality available for Kickstarter can be used, including splitting
+backers into groups and emailing out keys.
 
-## Custom import
+## Custom Import
 
-Have a custom list of email address that you need to import and generate
-download keys for? You can also use this tool. Just create a CSV file with the
-following format: (You must include the column header)
+Do you have a custom list of email addresses that you need to import and
+generate download keys for? You can also use this tool. Just create a CSV file
+with the following format: (You must include the columns `Email` and `Amount`).
 
     Email,Amount
     test@example.com,$10.00
     another@example.com,$12.00
     hello@example.com,$50.00
 
+> **Note:** In order to email any addresses you import, you must [contact
+> support][support] to get your account approved. This is a necessary step to
+> prevent spam. Keep in mind it may take some time for a person to review your
+> request, so keep that in mind when planning your distribution schedule.
+> Include as much information as possible so we can verify the authenticity of
+> your request. Alternatively you can use the URL method described above to
+> instantly distribute keys.
 
-> In order to email any addresses you import, you must [contact
-> support][support] to get your message approved.
+

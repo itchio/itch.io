@@ -81,8 +81,12 @@ If your project is being sold on other marketplaces, such as Steam, you can
 give away *external keys* to people who own your project. (e.g. with each
 **itch.io** purchase, see below for who can access keys)
 
-Navigate to the *External section* tab on the *Distribute* tab on your project's
-edit page to add keys to your project.
+An *external key* can only be given to someone who has access to an *itch.io
+download key*, and that download key must grant access to *exernal keys*.
+
+To make external keys available for owners of your project, navigate to the
+*External section* tab on the *Distribute* tab on your project's edit page to
+add keys to your project.
 
 > **Note:** It's good idea to triple-check before submitting external keys, as
 > it may be difficult to correct mistakes after keys have been made available.
@@ -97,7 +101,8 @@ can redeem external keys.
 
 ### Who can access external keys? (Steam, etc.)
 
-External keys are available to people who own your project
+External keys are generally available to people who have access to an itch.io
+*download key* for your project, aka the owners of your project.
 
 There are a few ways people can own something:
 

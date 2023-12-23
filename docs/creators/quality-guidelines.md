@@ -4,27 +4,31 @@
   amp: true
 }
 
-itch.io is [home to over half a million projects]($url_for{"browse"}), and we want to
-make sure people looking for something new and interesting have the best
+itch.io is home to [nearly 1 million projects]($url_for{"browse"}), and we want
+to make sure people looking for something new and interesting have the best
 experience possible. As a content creator, it's your responsibility to
 accurately represent your project, and represent it in a way that makes a
 prospective buyer, downloader, or player interested in what you've created.
 
-These quality guidelines are things that an uploader should be thinking about
-when creating their project pages.
+These quality guidelines are aspects that a creator should consider when
+publishing their project pages.
 
-**If you follow these guidelines, you'll likely have more players, buyers, and
-people talking about your creation.** Additionally, we may even feature your
-page on the homepage, and elsewhere on the site.
+**If you follow these guidelines, you're likely to have more players, buyers,
+and people talking about your work.** Your project will be eligible to be
+[indexed in our discovery features]($url_for{"docs",splat =
+"creators/getting-indexed"}), (like browse, search, and recommendations),
+giving it the opportunity to be found by our millions of monthly users.
 
-**If you don't follow these guidelines then a site admin may decide to remove
-your page from the itch.io's browse and search page.** Your page will still be
-available by direct access to anyone with the URL, or by your profile page, but
-because we feel that your page detracts from the browsing experience it will
-not shown on our listings.
+**If you fail to adhere to these guidelines, a site admin may choose to remove
+your page from itch.io's discovery index.** Your page will still be accessible
+via direct access to anyone with the URL, or through your profile page, but
+since we believe that your page detracts from the browsing experience, it will
+not be shown on our listings.
 
-> This is a living document, and we'd be glad to make changes based on your
-> suggestions. [Get in touch]($url_for{"support"})
+> This document is continually updated. As we encounter new types of creators
+> publishing their works, we sometimes need to revisit and revise these rules.
+> If you have any suggestions or questions, please [get in
+> touch]($url_for{"support"}).
 
 $index
 
@@ -53,13 +57,13 @@ Recent*.**
 
 ## Make your metadata accurate
 
-The metadata tab on your project's edit page allows you to add many different
-categorizations to your project. Your project will then show up on the
-respective browse page on itch.io.
+The metadata tab located on your project's editing page enables you to add
+various categorizations to your project. Consequently, your project will appear
+on the respective browsing page on itch.io.
 
-Do not use the metadata page to add categorizations that don't apply to your
-game. If you're purposefully adding every classification, we may mark your page
-as spam and disable access to your project pages.
+Avoid using the metadata page to add categorizations that are irrelevant to
+your game. If you intentionally add every classification, we may identify your
+page as spam and restrict access to your project pages.
 
 ### Only select platforms your project directly runs on
 
@@ -127,45 +131,48 @@ Additionally, review our policies on payment processors and adult content:
 
 ## Provide a cover image for your project
 
-The cover image is typically the first thing someone sees when they uncover
-your game in our browse pages. If you don't have one they'll likely pass over
-it. You can even upload a GIF of your project as the cover image to catch
-someone's eye.
+The cover image is typically the first element someone sees when they discover
+your game on our browse pages. If you don't have one, they'll likely skip over
+it. You can even upload a GIF of your project as the cover image to attract
+attention.
 
-If you're using an animated cover image, please make sure it doesn't have
-[seizure inducing
-effects](https://en.wikipedia.org/wiki/Photosensitive_epilepsy).
-([Web Content Accessibility Guidelines](https://www.w3.org/TR/WCAG20/#seizure))
+If you're using an animated cover image, please ensure it doesn't have
+[seizure-inducing
+effects](https://en.wikipedia.org/wiki/Photosensitive_epilepsy) as per the [Web
+Content Accessibility Guidelines](https://www.w3.org/TR/WCAG20/#seizure).
 
 ## Provide screenshots for your project (if applicable)
 
-Screenshots allow you to easily communicate what your project is. Many people
-browsing for something new will use screenshots to decide if it's worth their
-time. Just like cover images, screenshots can be GIFs. Feel free to use them if
-they better represent your project.
+Screenshots are an effective way to visually communicate what your project
+entails. Many users browsing for new content often rely on screenshots to
+determine if it's worth their time. Just like cover images, screenshots can
+also be GIFs. Feel free to use them if they better represent your project.
 
-Even if your project is an embedded HTML or Flash game you should provide
-screenshots. We'll display them on other parts of the site.
+Even if your project is an embedded browser game, it's recommended to provide
+screenshots. We'll display them on different parts of the site.
 
-If it's not appropriate to have images for your project, like a text only Twine,
-don't feel obligated to try to create them.
+However, if it's not suitable to have images for your project, such as a
+text-only Twine, there's no obligation to upload them.
 
 ## Do not choose every language if your game has no language
 
-Our classification page allows you to choose a language that your project is
-in. If your project has no written or spoken language you may be tempted to
-choose them all. Please don't do that, instead use the relevant *Accessibility*
-classifications such as *No text*.
+Our classification page enables you to select the language used in your
+project. If your project doesn't contain any written or spoken language, you
+might be tempted to select all available languages. We strongly advise against
+this. Instead, please utilize the relevant *Accessibility* classifications,
+such as *No text*.
 
-Only select a language if your project explicitly has a translation or
-originally is in that language.
+You should only select a language if your project explicitly includes a
+translation or was originally created in that language. Misusing the language
+options may result in your page being delisted.
 
 ## Do not use unrelated tags or classifications to promote your game
 
-A priority of itch.io is building an easy to browse and accurate database of
-projects. Adding tags, tools, engines, and classifications that are unrelated
-to your project for additional exposure may result in your project being
-delisted from our browse and search pages.
+Building an easy-to-browse and accurate database of projects is a priority at
+itch.io. Adding tags, tools, engines, and classifications that are unrelated to
+your project in an attempt to increase its visibility is against our rules. If
+violated, your account will be removed from our browse and search pages, and
+you will no longer be eligible for our discovery features.
 
 ## Do not upload misleading content
 
@@ -212,6 +219,23 @@ If you're concerned about maintaining multiple builds, please try out our
 significantly easier to use than anything provided by any other store or
 platform. You can even find integrations with popular game engines.
 
+## Prefer uploading your files directly to itch.io
+
+Avoid using third-party download services or links to other platforms that the
+end-user must go through to access your project's files.
+
+When publishing your games, software, or other digital content on itch.io, we
+strongly encourage you to upload your files directly to our platform. Direct
+file uploading helps maintain the highest level of security, reliability, and
+user experience.
+
+Uploading your files directly to itch.io ensures that they are always
+accessible. Third-party hosting services may suffer from downtime, bandwidth
+limitations, or even close down unexpectedly. With direct uploading, you're
+guaranteed that your users can download your project whenever they want. This
+is especially relevant if you're selling your content on itch.io, as we are
+responsible for ensuring buyers can access the content they have bought.
+
 ## Avoid obtrusive advertisements or third-party logins
 
 We prefer to see projects that have no advertisements but we realize that this
@@ -239,58 +263,60 @@ then we may delist from our browse and search pages.
 
 ### Do not add your game to unrelated jams for promotion
 
-Game jam hosts put a lot effort into their pages so that participants can have
-the best time, and work with other people on a similar theme. Do not submit
-your project to a jam with no consideration just so you can increase exposure
-to your page. We consider it spamming, your account will lose jam permission,
-and we may disable your account.
+Game jam hosts invest considerable effort into their pages to ensure
+participants have an enjoyable experience, and can collaborate with others on a
+unified theme. Please do not submit your project to a jam without
+consideration, merely to increase exposure for your page. We view such actions
+as spamming. As a consequence, your account will lose jam submission
+privileges, and we may even disable your account.
 
 ### Do not create a game jam to advertise your project
 
-Do not create a game jam just so you can submit or advertise your own project.
-Game jams are events for others to participate in, and we expect to see a
-reasonable level of effort put into their creation. Thinly veiled
-advertisements are not tolerated and will be taken down. Additionally, your
-account may lose permission to host and participate in game jams.
+Avoid creating a game jam solely for the purpose of submitting or promoting
+your own project. Game jams are designed as participatory events, and we expect
+a reasonable level of effort to be put into their organization. Thinly
+disguised advertisements are not acceptable and will be removed. Furthermore,
+your account may be stripped of its privileges to host and participate in game
+jams.
 
 ### Do not create a game jam to solicit work
 
-Jam participants should maintain all rights and ownership over their work. Do
-not use the jam system to seek out paid work or try to solicit game developers
-to create intellectual property for you or your company. Do not host a
-"competition" where the winner gives up the rights of their work, even if there
-is a monetary prize. This is exploitative to creators. There are many other
-places on the internet where can go and hire contractors, itch.io is not the
-place for that.
+Participants in a game jam should retain all rights and ownership over their
+work. Do not utilize the jam system to pursue paid work or solicit game
+developers to produce intellectual property for you or your company. Refrain
+from hosting a "competition" where the winner forfeits the rights to their
+work, even if a monetary prize is involved. Such actions are exploitative
+towards creators. There are numerous other places on the internet where you can
+hire contractors - itch.io is not the appropriate platform for that.
 
 ## Sales
 
 ### Your project should not be constantly on sale
 
-A sale is a special event when your game can be purchased for a reduced cost
-for a limited time. If your game is always on sale, then it's not actually on
-sale. Update the price of the game accordingly. We want people browsing game
-sales to see things that are on sale.
+A sale is a unique event where your game can be procured at a discounted price
+for a limited duration. If your game is perpetually on sale, then it isn't
+genuinely on sale. Please adjust the price of your game accordingly. We aim for
+people browsing game sales to encounter items that are genuinely discounted.
 
-**In many countries it is illegal to misrepresent the cost of your product.**
+**Misrepresenting the cost of your product is illegal in many countries.**
 
-Note: Bundles are an exception to this rule, since a bundle's discount is due
-to purchasing multiple items together, it is fine to have the bundle discount
-available indefinitely.
+Note: Bundles are an exception to this rule. As the discount on a bundle is due
+to the combined purchase of multiple items, it's acceptable to have the bundle
+discount available indefinitely.
 
 ### Do not use sales to misrepresent your product's price
 
-Do not change the base price of your product, then apply a sale to return your
-product back to the original price too make it seem like the product is sale
-despite the actual price being unchanged. This is false advertising, and it
-violations consumer protection laws in many regions.
+Do not alter the base price of your product, then apply a sale to bring your
+product back to its original price to make it seem like the product is on sale
+despite the actual price remaining unchanged. This is considered false
+advertising, and it violates consumer protection laws in many regions.
 
 ### Avoid creating sales too frequently
 
-Creating sales too frequently reduces the value of an individual sale. A sale
-is meant to be a special event where your product can be obtained for a
-discount. Do not use price manipulation and sales to mislead the buyer about
-the actual price of your product.
+Holding sales too frequently diminishes the value of each individual sale. A
+sale is intended to be a unique event where your product can be purchased at a
+discount. Avoid using price manipulation and frequent sales to mislead the
+buyer about the actual price of your product.
 
 ## Community
 
