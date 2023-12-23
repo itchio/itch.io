@@ -1,5 +1,7 @@
 # itch.io
 
+### Opening an issue? Read [CONTRIBUTING.md](https://github.com/itchio/itch.io/blob/master/CONTRIBUTING.md) first!!!
+
 Welcome to the public itch.io repository. There are a few things here:
 
 * itch.io's documentation lives in the `docs/`. These files are what make up the text available on <https://itch.io/docs>. If you spot any typos, issues, or have suggestions please feel free to report them here
