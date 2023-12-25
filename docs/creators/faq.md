@@ -64,8 +64,8 @@ We put some limits on new accounts to prevent abuse. We can disable them
 by request, all you have to do is [contact us][support].
 
   * There is a soft limit of 20 project pages.
-  * Individual file size is limited, and you should have 10 files max per page.  
-  The limit can be raised to [by request][support].
+  * Individual file size is limited to 1GB (2GB if using Butler), and you should
+  have 10 files max per page. The limit can be raised [by request][support].
 
 Because **itch.io** lets users download the files exactly as you uploaded them
 you can upload any kind of project for any kind of platform. There are no
