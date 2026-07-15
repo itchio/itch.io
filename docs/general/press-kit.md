@@ -18,7 +18,7 @@ $index
 
 When choosing a logo image please do not distort, add additional effects, or
 resize without preserving the aspect ratio. Choose a logo color that provides
-the best constract against the background to ensure everyone can read it.
+the best contrast against the background to ensure everyone can read it.
 
 ### Black
 
@@ -59,7 +59,7 @@ The primary itch.io brand color is **itchy carnation**:
 <div class="brand-color" style="background-color: #fa5c5c">#fa5c5c</div>
 </div>
 
-Texts colors for white backgrounds:
+Text colors for white backgrounds:
 
 <div class="brand-colors">
 <div class="brand-color" style="background-color: #222222">#222222</div>
@@ -70,7 +70,7 @@ Texts colors for white backgrounds:
 
 ## Naming and Typography
 
-Both **itch.io** or **itch** are lowercase:
+Both **itch.io** and **itch** are lowercase:
 
 * **itch.io** is the name of the company and the website (which includes the online store, creator dashboard, etc.). It is usually pronounced either "itch-eye-oh" or "itch-ee-oh".
 * **itch** is the name of our [desktop application](https://itch.io/app), which allows downloading and keeping games and other software up-to-date. When additional context is needed, it's referred to as "the itch app".
