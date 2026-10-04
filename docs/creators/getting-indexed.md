@@ -96,7 +96,7 @@ Here's a quick list of things to review if you're having trouble finding your pr
 	* If you want to make your up-and-coming project discoverable through itch.io, then use our Devlogs feature. Those are indexed even if no files are uploaded.
 * If your project is marked NSFW, it will only appear to people who have NSFW browsing enabled.
 	* People who don't have accounts on itch.io default to having NSFW off. Someone must be logged in and enable NSFW to discover that content through search & browse.
-* If you're selling your first project, then your page may be placed in our review queue. New sellers are reviewed before their projects are elgible for indexing. This proces may take a few days. Please contact us only after you've waited at least one day.
+* If you're selling your first project, then your page may be placed in our review queue. New sellers are reviewed before their projects are eligible for indexing. This process may take a few days. Please contact us only after you've waited at least one day.
 * Your page may be marked for review by one of our internal checks designed to prevent abuse. If you just published the page, please wait at least a day before contacting us.
 
 If you've gone through all the following and you believe your project still
